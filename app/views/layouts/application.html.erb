@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scary</title>
+  <title>Поиск horror-фильмов</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<div id="wrapper">		
-		<div id="div_image_top"> 			
- 			<div id="div_navigation_top">
- 				НАВИГАЦИЯ
+	<div id="wrapper">	
+
+		<div id="div_top">
+			<div id="div_navigation_top">
+ 				
  			</div>
+			<div id="div_title">
+				Лучшие фильмы ужасов всей истории кинематографа
+			</div>	 			
  		</div>
- 		<div id="div">
- 			
+
+ 		<div id="div_select_year">
+ 			<ul id="ul_select_year">
+ 				<li class="bt_select_year">1960 - н.в.</li>
+ 				<li class="bt_select_year">1960 - 1990</li>
+ 				<li class="bt_select_year">1990 - 2000</li>
+ 				<li class="bt_select_year">2000 - 2010</li>
+ 				<li class="bt_select_year">2010 - н.в.</li>
+ 			</ul>
  		</div> 		
+
 		<%= yield %>
+
+		<div class="clear"></div>	
+		<div><%= debug(params) if Rails.env.development? %></div>
+
 	</div>
+
+	
 
 </body>
 </html>

@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$black: #000000;
+$gold: #FAA21A;
+
+//отключаемый контур блоков:
+@mixin contour_of_bloсk
+{
+	//outline: 1px solid $gold; 
+}
+
 html {	
 	height: 100%;
 }
@@ -12,22 +21,27 @@ body {
 	height: 100%;
 }
 
+.clear 
+{
+	clear:both;
+}
+
 #wrapper {	
 	height: 100%;
 	margine: 0 auto;
 }
 
-#div_image_top{	
+#div_top{	
 	width: 100%;
 	height: 80%;
 	margine: 0 auto;
 	background: url(image_path("top.png")) no-repeat;
 	background-size: 100%;
-
 }
 
-#image_top {
-	width: 100%;	
+#div_title {
+	color: white;
+	font-size: 16pt;
 }
 
 #div_navigation_top {
@@ -35,3 +49,33 @@ body {
 	height: 30px;
 	margine: 0 0 -100px 0;
 }
+
+//////////////////////////////
+// ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (НАЧАЛО)
+//////////////////////////////
+
+#div_select_year {
+	@include contour_of_bloсk;
+	text-align: center;
+	height: 30px;
+	padding: 20px 0;
+}
+
+ul#ul_select_year {
+	margin: 0;
+}
+
+ul#ul_select_year li.bt_select_year {
+	font-size: 18pt;
+	display: inline;
+	margin-right: 20px;
+	border: 1px solid $black;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+//////////////////////////////
+// ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (КОНЕЦ)
+//////////////////////////////
