@@ -1,0 +1,37 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {	
+	height: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+#wrapper {	
+	height: 100%;
+	margine: 0 auto;
+}
+
+#div_image_top{	
+	width: 100%;
+	height: 80%;
+	margine: 0 auto;
+	background: url(image_path("top.png")) no-repeat;
+	background-size: 100%;
+
+}
+
+#image_top {
+	width: 100%;	
+}
+
+#div_navigation_top {
+	width: 30px;
+	height: 30px;
+	margine: 0 0 -100px 0;
+}

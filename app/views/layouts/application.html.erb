@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scary</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div id="wrapper">		
+		<div id="div_image_top"> 			
+ 			<div id="div_navigation_top">
+ 				НАВИГАЦИЯ
+ 			</div>
+ 		</div>
+ 		<div id="div">
+ 			
+ 		</div> 		
+		<%= yield %>
+	</div>
+
+</body>
+</html>
