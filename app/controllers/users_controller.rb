@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       else
         render action: 'new'      
       end
-    end
+       
   end
 
   # PATCH/PUT /users/1

@@ -13,17 +13,15 @@
 		<div id="div_navigation_top"> 			
 			<ul id="ul_navigation_top">
 				<li class="li_navigation_top"><%= link_to("Главная", root_path, class: "a_navigation_top") %></li>
-				<li class="li_navigation_top"><%= link_to("Регистрация", '#', class: "a_navigation_top") %></li>
-				<li class="li_navigation_top"><%= link_to("Вход", '#', class: "a_navigation_top") %></li>
+				<li class="li_navigation_top"><%= link_to("Регистрация", new_user_path, class: "a_navigation_top") %></li>
+				<li class="li_navigation_top"><%= link_to("Вход", new_session_path, class: "a_navigation_top") %></li>
 			</ul>
  		</div>
 
-		<div id="div_top"			
-
-			<div id="div_title">			
-				
-			</div>	
-
+		<div id="div_top">	
+			<div id="div_form">		
+				<%= yield(:form) %>	
+			</div>				
  		</div>
 
  		<div id="div_select_year">

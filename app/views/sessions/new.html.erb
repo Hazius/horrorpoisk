@@ -1,0 +1,22 @@
+<% provide(:form) do %>
+
+	<%= form_tag( 	{ controller: "sessions", action: "create" }, 
+						{ method: "post" } ) do %>
+
+		<div class="for_field_input">
+			<div class="label_for_field_input">email:</div>
+			<%= text_field_tag :email, nil, class: "field_input" %>
+		</div>
+
+		<div class="for_field_input">
+			<div class="label_for_field_input">пароль:</div>
+			<%= password_field_tag :password,nil, class: "field_input" %>
+		</div>
+
+		<%= submit_tag "Войти", class: "submit" %>
+
+		<p><%= link_to "Зарегистрироваться в системе", new_user_path %></p>
+
+	<% end %>
+
+<% end %>
