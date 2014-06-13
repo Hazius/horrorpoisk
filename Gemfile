@@ -20,6 +20,7 @@ group :production do
 	gem 'rails_12factor', '0.0.2'
 end
 
+gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'russian', '0.6.0'
 gem 'json', '1.8.1'
@@ -29,7 +30,6 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
-gem 'bcrypt-ruby', '~> 3.1.5'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

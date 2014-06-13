@@ -4,6 +4,8 @@
 
 $black: #000000;
 $gold: #FAA21A;
+$white: #FFFFFF;
+$smoky: #F5F5F5;
 
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
@@ -31,24 +33,70 @@ body {
 	margine: 0 auto;
 }
 
+//////////////////////////////
+// ВЕРХНЯЯ ПАНЕЛЬКА С ПРИВЕТСТВУЮЩЕЙ КАРТИНКОЙ (НАЧАЛО)
+//////////////////////////////
+
+//Весь блок:
 #div_top{	
 	width: 100%;
-	height: 80%;
+	height: 100%;
 	margine: 0 auto;
 	background: url(image_path("top.png")) no-repeat;
 	background-size: 100%;
 }
 
 #div_title {
-	color: white;
+	color: $white;
 	font-size: 16pt;
 }
 
-#div_navigation_top {
-	width: 30px;
-	height: 30px;
-	margine: 0 0 -100px 0;
+//////////////////////////////
+// ВЕРХНЯЯ ПАНЕЛЬКА С ПРИВЕТСТВУЮЩЕЙ КАРТИНКОЙ (КОНЕЦ)
+//////////////////////////////
+
+//////////////////////////////
+// ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА (НАЧАЛО)
+//////////////////////////////
+
+A.a_navigation_top 
+{
+	color: $smoky;
+
+	&:visited {
+		color: $smoky;
+	}
+
+	&:hover {
+		color: $black;
+		background: $smoky;
+	}
 }
+
+#div_navigation_top {
+	width: 100%;
+	height:40px;
+	float: right;
+	position: fixed;
+	text-align: right;
+	background-color: $black;
+}
+
+ul#ul_navigation_top {
+	margin-right: 100px;
+}
+
+ul#ul_navigation_top li.li_navigation_top {
+	font-size: 14pt;
+	display: inline;
+	margin-right: 10px;
+}
+
+//////////////////////////////
+// ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА (КОНЕЦ)
+//////////////////////////////
+
+
 
 //////////////////////////////
 // ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (НАЧАЛО)

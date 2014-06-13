@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Поиск horror-фильмов</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  	<title>horrorpoisk</title>
+  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
 
 	<div id="wrapper">	
 
-		<div id="div_top">
-			<div id="div_navigation_top">
- 				
- 			</div>
-			<div id="div_title">
-				Лучшие фильмы ужасов всей истории кинематографа
-			</div>	 			
+		<div id="div_navigation_top"> 			
+			<ul id="ul_navigation_top">
+				<li class="li_navigation_top"><%= link_to("Главная", root_path, class: "a_navigation_top") %></li>
+				<li class="li_navigation_top"><%= link_to("Регистрация", '#', class: "a_navigation_top") %></li>
+				<li class="li_navigation_top"><%= link_to("Вход", '#', class: "a_navigation_top") %></li>
+			</ul>
+ 		</div>
+
+		<div id="div_top"			
+
+			<div id="div_title">			
+				
+			</div>	
+
  		</div>
 
  		<div id="div_select_year">
  			<ul id="ul_select_year">
- 				<li class="bt_select_year">1960 - н.в.</li>
+ 				<li class="bt_select_year"><%= link_to("1960 - н.в.", films_path) %></li>
  				<li class="bt_select_year">1960 - 1990</li>
  				<li class="bt_select_year">1990 - 2000</li>
  				<li class="bt_select_year">2000 - 2010</li>

@@ -1,6 +1,8 @@
 Scary::Application.routes.draw do
 
+  resources :users
   resources :films
+  resources :sessions, only: [:new, :create, :destroy]
 
 	root 'welcome#index'
 
