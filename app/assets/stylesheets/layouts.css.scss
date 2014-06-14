@@ -10,17 +10,21 @@ $smoky: #F5F5F5;
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
-	//outline: 1px solid $gold; 
+	//outline: 1px solid $white; 
 }
 
-html {	
+html {		
 	height: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
+	//background: url(image_path("fon2.png"));
+	//background-size: 100%;	
 }
 
 .clear 
@@ -28,23 +32,31 @@ body {
 	clear:both;
 }
 
-#wrapper {	
+div#wrapper {	
 	height: 100%;
-	margin: 0 auto;
+	margin: 0 auto;	
+}
+
+div#div_background {
+	border-top: 1px solid $black;
+	width: 100%;
+	height: 100%;
+	//top: 5%;
+	position: fixed;
+	background: url(image_path("top.png")) no-repeat;
+	background-size: cover;
+	//@include contour_of_bloсk;
 }
 
 //////////////////////////////
 // ВЕСЬ ВЕРХНИЙ БЛОК НА ВСЮ СТРАНИЦУ С ПРИВЕТСТВУЮЩЕЙ КАРТИНКОЙ (НАЧАЛО)
 //////////////////////////////
 
-//Весь блок:
-#div_top{	
+div#div_yield {
+	position: absolute;
+	top: 5%;		
 	width: 100%;
-	height: 100%;
-	//margin: 0 auto;
-	padding-top: 40px;
-	background: url(image_path("top.png")) no-repeat;
-	background-size: 100%;
+	@include contour_of_bloсk;
 }
 
 //////////////////////////////
@@ -55,40 +67,43 @@ body {
 // ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА (НАЧАЛО)
 //////////////////////////////
 
+#div_navigation_top {
+	width: 100%;
+	height: 5%;//40px;
+	position: fixed;
+	text-align: right;
+	top: 0;
+	border-bottom: 1px solid $gold; 
+	background-color: $black;
+	@include contour_of_bloсk;
+}
+
 A.a_navigation_top 
 {
+	font-size: 14pt;
 	color: $smoky;
 	text-decoration: none;
-
 	&:visited {
 		color: $smoky;
 	}
 
 	&:hover {
-		color: $black;
-		background: $smoky;
+		color: $gold;
+		//background: $smoky;
+
+		border: 1px solid $gold;
 		border-radius: 5px;
-		box-shadow: 0 0 100px $smoky;
+		box-shadow: 0 0 50px $smoky;
 	}
 }
 
-#div_navigation_top {
-	width: 100%;
-	height:40px;
-	float: right;
-	position: fixed;
-	text-align: right;
-	background-color: $black;
-}
-
 ul#ul_navigation_top {
-	margin-right: 100px;
+	margin-right: 100px;	
 }
 
-ul#ul_navigation_top li.li_navigation_top {
-	font-size: 14pt;
+ul#ul_navigation_top li.li_navigation_top {	
 	display: inline;
-	margin-right: 10px;
+	margin-right: 10px;		
 }
 
 //////////////////////////////
@@ -96,25 +111,20 @@ ul#ul_navigation_top li.li_navigation_top {
 //////////////////////////////
 
 //////////////////////////////
-// ФОРМА РЕГИСТРАЦИИ, ВХОДА И Т.П. (НАЧАЛО)
-//////////////////////////////
-#div_form {
-	height: 30%;
-	margin-top: 5%;
-}
-//////////////////////////////
-// ФОРМА РЕГИСТРАЦИИ, ВХОДА И Т.П. (КОНЕЦ)
-//////////////////////////////
-
-//////////////////////////////
 // ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (НАЧАЛО)
 //////////////////////////////
 
-#div_select_year {
-	@include contour_of_bloсk;
+#div_select_year {	
 	text-align: center;
-	height: 30px;
-	padding: 20px 0;
+	width: 100%;
+	height: 5%;//40px;
+	padding-top: 10px;
+	position: fixed;
+	bottom: 0;
+	background-color: $black;
+	border-top: 1px solid $gold; 
+
+	//@include contour_of_bloсk;
 }
 
 ul#ul_select_year {

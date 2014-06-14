@@ -5,12 +5,15 @@ class FilmsController < ApplicationController
   # GET /films
   # GET /films.json
   def index
-    @films = Film.all
+    #@films = Film.all    
+    @films = Film.where(["year >= :year_from and year <= :year_to", 
+                        { year_from: params[:year_from], year_to: params[:year_to] }])
   end
 
   # GET /films/1
   # GET /films/1.json
   def show
+    render 'index'
   end
 
   # GET /films/new
@@ -55,6 +58,7 @@ class FilmsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_film
       @film = Film.find(params[:id])

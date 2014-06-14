@@ -6,9 +6,14 @@ $smoky: #F5F5F5;
 $black: #000000;
 $white: #FFFFFF;
 
+#div_form {
+	height: 30%;
+	margin-top: 5%;
+}
+
 // Блок для лейбла и инпут поля
 div.for_field_input {
-	border-bottom: 1px solid $smoky;
+	border-bottom: 1px solid $black;
 	font-size: 14pt;
 	//margin: 0;
 	width: 340px;	
