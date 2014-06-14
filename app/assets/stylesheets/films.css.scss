@@ -11,7 +11,7 @@ $red_dark: #8B0000;
 $green: #90EE90;//#008000;
 $red: #FF0000;
 
-$height_blok: 250px;
+$height_blok: 200px;
 
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
@@ -35,21 +35,40 @@ li.li_menu_films {
 	font-size: 14pt;
 	color: $black;
 	background-color: $white;
-	border-radius: 30px;
+	border: 1px solid $black;
+	border-radius: 0 30px 30px 0;
 	box-shadow: 0 0 30px $smoky;
 
 	//@include contour_of_bloсk;
 }
 
-img.image_at_menu_films {
-	height: $height_blok;
-	//width: 200px;	
+div.div_image_at_menu_films {
 	float: left;	
 }
 
-a.a_film_name {
+img.image_at_menu_films {
+	height: $height_blok;
+	//float: left;	
+}
+
+a.a_film_name, a.a_film_kinopoisk {
+
 	font-size: 20pt;
 	text-decoration: none;	
+	line-height: 1.5;
+
+	color: $black;
+	text-decoration: none;
+
+	&:visited {
+		color: $black;
+	}
+
+	&:hover {
+		color: $gold;
+		background-color: $white;
+		border-bottom: 1px solid $gold;		
+	}
 }
 
 div.div_options_at_film {
@@ -58,16 +77,18 @@ div.div_options_at_film {
 	//@include contour_of_bloсk;
 }
 
-div.div_description_of_film {	
-	margin-top: 20px;
+div.div_description_of_film {
+	//margin-top: 10px;
 	width: 70%;
-	//height: 90%;
+	//border: 1px solid $black;
+	height: 100%;
 	float: left;
 	//@include contour_of_bloсk;
 }
 
-a.a_film_kinopoisk {	
-	font-size: 20pt;
+div.div_my_description_of_film {	
+	height: 80%;
+	//@include contour_of_bloсk;
 }
 
 div.div_vote {
@@ -76,6 +97,7 @@ div.div_vote {
 	//@include contour_of_bloсk;
 	color: $white;
 	font-size: 18pt;
+	line-height: 1.5;
 	text-align: center;
 }
 
@@ -103,23 +125,7 @@ div.div_vote_down {
 
 	&:hover {
 		background-color: $red;
-		color: $black;
+		//color: $black;
 		cursor: pointer;
 	}
-}
-
-///////////////////////////////////
-//// СТАРЫЙ ВАРИАНТ:
-///////////////////////////////////
-.div_short_description_for_film {
-	margin: 20px 0;
-	width: 50%;
-	height: 300px;
-	@include contour_of_bloсk;
-}
-
-.image_film {
-	float: left;
-	//width: 300px;
-	height: 300px;
 }

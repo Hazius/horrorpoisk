@@ -2,40 +2,36 @@
     <ul id="ul_menu_films">
         <% @films.each do | film | %>
             <li class="li_menu_films">
-                <%= image_tag(film.image, class: "image_at_menu_films") %>            
+
+                <div class="div_image_at_menu_films">
+                    <%= image_tag(film.image, class: "image_at_menu_films") %>   
+                </div>  
+
                 <div class="div_options_at_film">
 
                     <div class="div_description_of_film">
-                        <%= link_to("#{film.name} (#{film.year})", film_path(film), { class: "a_film_name" }) %>
-                        <br /><br />
-                        <p>Краткое описание:</p>
-                        <p><%= film.short_description %></p>
+                        <div class="div_my_description_of_film">  
+                            <%= link_to("#{film.name} (#{film.year})", film_path(film), { class: "a_film_name" }) %>            
+                        
+                            <p>Режиссер: такой то</p>
+                            <p><%= film.short_description %></p>                        
+                        </div>
                         <%= link_to("www.kinopoisk.ru", film_path(film), { class: "a_film_kinopoisk" }) %>
+
                     </div>
+
                     <div class="div_vote">
-                        <div class="div_vote_up"><br />Понравился</div>
-                        <div class="div_vote_down"><br />Не понравился</div>
+                        <div class="div_vote_up">Понравился<br />(111)</div>
+                        <div class="div_vote_down">Не понравился<br />(333)</div>
                     </div>
                 </div>
+
             </li>
             <div class="clear"></div>  
         <% end %>
     </ul>
     <br /><br /><br />
 </div>
-
-<!--
-
-<% @films.each do | film | %>
-  <div class="div_short_description_for_film">
-    <%= image_tag(film.image, class: "image_film") %>
-    <%= film.name %>
-    <%= film.short_description %>
-  </div>
-  <div class="clear"></div> 
-<% end %>
-
--->
 
 <!--
 

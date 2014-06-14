@@ -13,6 +13,25 @@ $smoky: #F5F5F5;
 	//outline: 1px solid $white; 
 }
 
+@mixin a_top_and_bottom {
+
+	color: $smoky;
+	text-decoration: none;
+
+	&:visited {
+		color: $smoky;
+	}
+
+	&:hover {
+		color: $gold;
+		//background: $smoky;
+
+		border: 1px solid $gold;
+		border-radius: 5px;
+		box-shadow: 0 0 50px $smoky;
+	}
+}
+
 html {		
 	height: 100%;
 	padding: 0;
@@ -73,28 +92,14 @@ div#div_yield {
 	position: fixed;
 	text-align: right;
 	top: 0;
-	border-bottom: 1px solid $gold; 
+	border-bottom: 2px solid $gold; 
 	background-color: $black;
 	@include contour_of_bloсk;
 }
 
 A.a_navigation_top 
 {
-	font-size: 14pt;
-	color: $smoky;
-	text-decoration: none;
-	&:visited {
-		color: $smoky;
-	}
-
-	&:hover {
-		color: $gold;
-		//background: $smoky;
-
-		border: 1px solid $gold;
-		border-radius: 5px;
-		box-shadow: 0 0 50px $smoky;
-	}
+	@include a_top_and_bottom;
 }
 
 ul#ul_navigation_top {
@@ -102,6 +107,7 @@ ul#ul_navigation_top {
 }
 
 ul#ul_navigation_top li.li_navigation_top {	
+	font-size: 14pt;
 	display: inline;
 	margin-right: 10px;		
 }
@@ -122,7 +128,7 @@ ul#ul_navigation_top li.li_navigation_top {
 	position: fixed;
 	bottom: 0;
 	background-color: $black;
-	border-top: 1px solid $gold; 
+	border-top: 2px solid $gold; 
 
 	//@include contour_of_bloсk;
 }
@@ -135,11 +141,15 @@ ul#ul_select_year li.bt_select_year {
 	font-size: 18pt;
 	display: inline;
 	margin-right: 20px;
-	border: 1px solid $black;
+	//border: 1px solid $black;
 
-	&:hover {
-		cursor: pointer;
-	}
+	//&:hover {
+		//cursor: pointer;
+	//}
+}
+
+A.a_navigation_bottom {
+	@include a_top_and_bottom;
 }
 
 //////////////////////////////
