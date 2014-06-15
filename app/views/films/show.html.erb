@@ -1,29 +1,107 @@
-<p id="notice"><%= notice %></p>
+<div id="div_show_film">   
 
-<p>
-  <strong>Name:</strong>
-  <%= @film.name %>
-</p>
+    <div id="div_image_at_show_film">
+        <%= image_tag(@film.image, id: "image_at_show_film") %>   
+    </div>  
 
-<p>
-  <strong>Year:</strong>
-  <%= @film.year %>
-</p>
+    <div id="div_description_at_show_film">
+        <strong><%= @film.name %></strong>      
 
-<p>
-  <strong>Short description:</strong>
-  <%= @film.short_description %>
-</p>
+        <p>
+            <strong>Режиссер:</strong>
+            <%= @film.producer %> Тут режиссер
+        </p>
 
-<p>
-  <strong>Full description:</strong>
-  <%= @film.full_description %>
-</p>
+        <p>
+            <strong>Год:</strong>
+            <%= @film.year %>
+        </p>
 
-<p>
-  <strong>Link to kinopoisk:</strong>
-  <%= @film.link_to_kinopoisk %>
-</p>
+        <p>
+            <strong>Полное описание:</strong>
+            <br />
+            <%= @film.full_description %>
+        </p>
+
+        <p>     
+            <%= link_to("Посмотреть на www.kinopoisk.ru", @film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
+        </p>
+
+    </div>  
+
+    <div class="clear"></div>  
+
+    <div id="div_comments">
+
+        <div id="form_for_create_comment">
+
+            <% if signed_in? %>  
+
+                <%= form_for(@comment) do |f| %>
+                
+                    Оставить комментарий:<br>
+                    <%= f.text_area :text, id: "text_area_for_comment" %>                
+
+                    <%= f.hidden_field :user_id, value: current_user().id %>
+                    <%= f.hidden_field :film_id %>
+                    <!-- Заполнение fiels_liked_for_comment происходит обработкой JS -->
+                    <%= f.hidden_field :liked, id: "fiels_liked_for_comment" %>
+
+                    <div class="div_submit_for_comment">
+                        <%= f.submit "Понравился", id: "submit_up_for_comment", class: "submit_for_comment" %>
+                    </div>
+
+                    <div class="div_submit_for_comment">
+                        <%= f.submit "Не понравился", id: "submit_down_for_comment", class: "submit_for_comment" %>
+                    </div>
+
+                    <div class="clear"></div>  
+
+                <% end %>
+
+            <% else %>
+
+                <p>Только зарегистрированные пользователи могут голосовать и оставлять комментарии...</p>
+
+            <% end %>    
+
+        </div>
+
+        <div id="div_all_comments_for_film">            
+
+            <% if ( @comments.count != 0 ) %>       
+                <% @comments.each do |comment| %>
+                    <%= comment.user.name %> оценил:
+                        <% if comment.liked %>
+                    <div class="div_comment_for_film div_comment_for_film_up">
+                            <div class="div_image_for_comment">
+                                <%= image_tag("hend_up.png", class: "image_for_comment") %> 
+                            </div>
+                        <% else %>
+                    <div class="div_comment_for_film div_comment_for_film_down">
+                            <div class="div_image_for_comment">
+                                <%= image_tag("hend_down.png", class: "image_for_comment") %> 
+                            </div>
+                        <% end %>                       
+                          
+                        <%= comment.text %>
+                    </div>
+
+                    <div class="clear"></div>  
+                <% end %>
+            <% else %>
+                <p>Комментариев пока нет...</p>
+            <% end %>
+        
+        </div>
+
+    </div>
+
+</div>
+
+<!--
 
 <%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>
+
+-->

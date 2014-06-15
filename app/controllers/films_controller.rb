@@ -13,7 +13,8 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
-    render 'index'
+    @comments = @film.comments.all()
+    @comment = @film.comments.new    
   end
 
   # GET /films/new

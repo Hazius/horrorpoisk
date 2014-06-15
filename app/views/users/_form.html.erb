@@ -19,18 +19,18 @@
     </div>
   
     <div class="for_field_input">
-      <div class="label_for_field_input">email:</div>
+      <div class="label_for_field_input">Email:</div>
       <%= f.text_field :email, class: "field_input" %>
     </div>
 
     <div class="for_field_input">
-      <div class="label_for_field_input">пароль:</div>
-      <%= f.text_field :password_digest, class: "field_input" %>
+      <div class="label_for_field_input">Пароль:</div>
+      <%= f.password_field :password, class: "field_input" %>
     </div>
 
     <div class="for_field_input">
-      <div class="label_for_field_input">повтор:</div>
-      <%= f.text_field :remember_token, class: "field_input" %>
+      <div class="label_for_field_input">Повтор:</div>
+      <%= f.password_field :password_confirmation, class: "field_input" %>
     </div>
 
     <%= f.submit "Принять", class: "submit" %>

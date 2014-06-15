@@ -1,5 +1,7 @@
 Scary::Application.routes.draw do
 
+  resources :comments
+
   resources :users
   resources :films
   resources :sessions, only: [:new, :create, :destroy]

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614191250) do
+ActiveRecord::Schema.define(version: 20140614202421) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "film_id"
+    t.boolean  "liked"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "films", force: true do |t|
     t.string   "name"

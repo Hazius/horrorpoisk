@@ -5,6 +5,7 @@
 $smoky: #F5F5F5;
 $black: #000000;
 $white: #FFFFFF;
+$gold: #FAA21A;
 
 #div_form {
 	height: 30%;
@@ -13,17 +14,17 @@ $white: #FFFFFF;
 
 // Блок для лейбла и инпут поля
 div.for_field_input {
-	border-bottom: 1px solid $black;
-	font-size: 14pt;
-	//margin: 0;
-	width: 340px;	
+	border-bottom: 1px solid $black;	
+	width: 800px;	
 }
 
 // лейбл для инпут поля
-div.label_for_field_input {
+div.label_for_field_input {	
+	line-height: 1;
+	font-size: 30pt;
 	color: $black;
 	float: left;
-	width: 80px;
+	width: 180px;
 }
 
 // инпут поле
@@ -31,7 +32,7 @@ input.field_input {
 	//height: 30px;
 	border: none;
 	//border-bottom: 4px solid $smoky;
-	font-size: 16pt;
+	font-size: 30pt;
 	background-color: transparent;
 
 	&:focus {
@@ -42,10 +43,13 @@ input.field_input {
 // Кнопочка
 input.submit {
 	font-size: 20pt;
-	margin: 20px 0 0 80px;
+	margin: 20px 0 0 0;
 	background-color: transparent;
-	color: $white;
+	width: 180px;
+	height: 50px;
+	color: $black; //$smoky;
 	&:hover {
 		cursor: pointer;
+		color: $gold;
 	}
 }

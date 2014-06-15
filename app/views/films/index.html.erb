@@ -12,11 +12,10 @@
                     <div class="div_description_of_film">
                         <div class="div_my_description_of_film">  
                             <%= link_to("#{film.name} (#{film.year})", film_path(film), { class: "a_film_name" }) %>            
-                        
-                            <p>Режиссер: такой то</p>
-                            <p><%= film.short_description %></p>                        
+                            <p class="p_description_of_film">Режиссер: такой то</p>
+                            <p class="p_description_of_film"><%= film.short_description %> aaaaaaaaaaa aaaaaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaaaa aa aaaaaaa aaaaaa aaaaa aaaaaaaa aaaa aaaaaaaa aaaa aaaa aaaaaa aaaaa aaaaaaa aaaa aaaaa aaaaaaaa aaaa aaaaaaaa aaaa aaaa aaaaaa aaaaa aaaaaaa aaaa aaaaaaaa aaaa aaaaaaaa aaaa aaaa aaaaaa aaaa</p>                        
                         </div>
-                        <%= link_to("www.kinopoisk.ru", film_path(film), { class: "a_film_kinopoisk" }) %>
+                        <%= link_to("Посмотреть на www.kinopoisk.ru", film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
 
                     </div>
 
@@ -32,6 +31,7 @@
     </ul>
     <br /><br /><br />
 </div>
+
 
 <!--
 

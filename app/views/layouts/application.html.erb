@@ -15,14 +15,27 @@
 		</div>
 
 		<div id="div_yield">				
-			<%= yield %>						
+			<%= yield %>
+			<!--
+			<div class="clear"></div>	
+			<div><%= debug(params) if Rails.env.development? %></div>
+			<br /><br /><br /><br />	
+			-->					
  		</div>
 
 		<div id="div_navigation_top"> 			
-			<ul id="ul_navigation_top">
-				<li class="li_navigation_top"><%= link_to("Главная", root_path, class: "a_navigation_top") %></li>
-				<li class="li_navigation_top"><%= link_to("Вход", new_session_path, class: "a_navigation_top") %></li>
-				<li class="li_navigation_top"><%= link_to("Регистрация", new_user_path, class: "a_navigation_top") %></li>				
+			<ul id="ul_navigation_top">					
+
+				<li class="li_navigation_top"><%= link_to("Главная", root_path, class: "a_navigation_top") %></li>				
+				
+				<% if signed_in?() %>
+					<li class="li_navigation_top"><%= link_to("Профиль", edit_user_path(current_user()), class: "a_navigation_top") %></li>
+					<li class="li_navigation_top"><%= link_to("Выход", session_path(current_user()), method: :delete, class: "a_navigation_top") %></li>	
+				<% else %>
+					<li class="li_navigation_top"><%= link_to("Вход", new_session_path, class: "a_navigation_top") %></li>				
+					<li class="li_navigation_top"><%= link_to("Регистрация", new_user_path, class: "a_navigation_top") %></li>	
+				<% end %>
+
 			</ul>
  		</div>	
 
@@ -35,12 +48,7 @@
  				<li class="bt_select_year"><%= link_to("(2010-2014)", films_path(year_from: "2010", year_to: "2014"), class: "a_navigation_bottom") %></li>
  				<li class="bt_select_year"><%= link_to("(2014)", films_path(year_from: "2014", year_to: "2014"), class: "a_navigation_bottom") %></li>
  			</ul>
- 		</div>		
-
-		<!--
-		<div class="clear"></div>	
-		<div><%= debug(params) if Rails.env.development? %></div>
-		-->
+ 		</div>			
 
 	</div>
 
