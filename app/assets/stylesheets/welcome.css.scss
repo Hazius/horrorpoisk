@@ -1,3 +1,61 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$gold: #FAA21A;
+$white: #FFFFFF;
+$black: #000000;
+$green_dark: #006400;
+
+//отключаемый контур блоков:
+@mixin contour_of_bloсk
+{
+	outline: 1px solid $gold;
+}
+
+$border_width: 2px;
+$input_of_search_height: 40px;
+
+div#div_search {
+	width: 70%;
+	height: $input_of_search_height + 2*$border_width;
+	margin: 20% auto 0 auto;
+	//@include contour_of_bloсk;
+}
+
+input#field_input_of_search {
+	line-height: 1;
+	float: left;	
+	width: 90%;
+	height: $input_of_search_height;
+	background-color: $white;
+	font-size: 20pt;
+	border: $border_width solid $black;
+	box-shadow: 0 0 50px $black;
+	outline: none;
+
+	&:hover {
+		border: $border_width solid #191970;
+		box-shadow: 0 0 50px #191970;
+	}
+
+	&:focus {
+		border: $border_width solid #191970;
+		box-shadow: 0 0 50px #191970;
+		outline: none;
+	}
+}
+
+input#submit_of_search {
+	height: $input_of_search_height + 2*$border_width;
+	width: $input_of_search_height + 2*$border_width;
+	background: url(image_path("loupe.png")) no-repeat;
+	background-size: cover;
+	border: none;
+
+
+	&:hover {
+		//border: $border_width solid transparent;
+		cursor: pointer;
+	}
+}

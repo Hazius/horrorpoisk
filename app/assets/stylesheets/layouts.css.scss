@@ -68,18 +68,23 @@ div#div_background {
 }
 
 //////////////////////////////
-// ВЕСЬ ВЕРХНИЙ БЛОК НА ВСЮ СТРАНИЦУ С ПРИВЕТСТВУЮЩЕЙ КАРТИНКОЙ (НАЧАЛО)
+// ГЛАВНЫЙ БЛОК С КОНТЕНТОМ (НАЧАЛО)
 //////////////////////////////
 
-div#div_yield {
+div#div_wrapper_yield {
 	position: absolute;
-	top: 5%;		
 	width: 100%;
-	@include contour_of_bloсk;
+}
+
+div#div_yield {
+	width: 100%;
+	margin: 10% 0;
+
+	//@include contour_of_bloсk;
 }
 
 //////////////////////////////
-// ВЕСЬ ВЕРХНИЙ БЛОК НА ВСЮ СТРАНИЦУ С ПРИВЕТСТВУЮЩЕЙ КАРТИНКОЙ (КОНЕЦ)
+// ГЛАВНЫЙ БЛОК С КОНТЕНТОМ  (КОНЕЦ)
 //////////////////////////////
 
 //////////////////////////////
@@ -88,11 +93,11 @@ div#div_yield {
 
 #div_navigation_top {
 	width: 100%;
-	height: 5%;//40px;
+	height: 40px; // 5%; 
 	position: fixed;
 	text-align: right;
 	top: 0;
-	border-bottom: 2px solid $gold; 
+	border-bottom: 2px solid #191970; //$gold; 
 	background-color: $black;
 	@include contour_of_bloсk;
 }
@@ -123,12 +128,12 @@ ul#ul_navigation_top li.li_navigation_top {
 #div_select_year {	
 	text-align: center;
 	width: 100%;
-	height: 5%;//40px;
+	height: 40px; // 5%;
 	padding-top: 10px;
 	position: fixed;
 	bottom: 0;
 	background-color: $black;
-	border-top: 2px solid $gold; 
+	border-top: 2px solid #191970; //$gold;  
 
 	//@include contour_of_bloсk;
 }
@@ -140,7 +145,7 @@ ul#ul_select_year {
 ul#ul_select_year li.bt_select_year {
 	font-size: 18pt;
 	display: inline;
-	margin-right: 20px;
+	margin: 0 10px 0 0;	
 	//border: 1px solid $black;
 
 	//&:hover {
@@ -149,6 +154,7 @@ ul#ul_select_year li.bt_select_year {
 }
 
 A.a_navigation_bottom {
+	line-height: 1;
 	@include a_top_and_bottom;
 }
 

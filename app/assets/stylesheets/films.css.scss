@@ -21,28 +21,29 @@ $height_blok: 150px;
 	outline: 1px solid $gold; 
 }
 
-div#div_menu_films {	
-
-}
-
 ul#ul_menu_films {
 	list-style: none;
+	width: 70%;
+	margin: 0 auto;
+	//@include contour_of_bloсk;
 }
 
 li.li_menu_films {
-	margin-top: 30px;
-	width: 90%;
+	margin-top: 20px;	
 	height: $height_blok;
 	text-align: left;
 	font-size: 14pt;
 	color: $black;
 	background-color: $white;
-	border: 1px solid $black;
+	border: 2px solid $black;
 	border-radius: 0 30px 30px 0;
 	box-shadow: 0 0 30px $smoky;
 
 	//@include contour_of_bloсk;
 }
+
+// К меньшенная картинка к фильму
+// (начало)
 
 div.div_image_at_menu_films {
 	float: left;	
@@ -53,11 +54,17 @@ img.image_at_menu_films {
 	//float: left;	
 }
 
+// (конец)
+// К меньшенная картинка к фильму
+
+// Серединка блока: описание, ссылки на кинопоиск и просмотр на сайте
+// (начало)
+
 a.a_film_name, a.a_film_kinopoisk {
 
 	font-size: 14pt;
 	text-decoration: none;	
-	line-height: 1.5;
+	line-height: 1;
 
 	color: $black;
 	text-decoration: none;
@@ -68,8 +75,8 @@ a.a_film_name, a.a_film_kinopoisk {
 
 	&:hover {
 		color: $gold;
-		background-color: $white;
-		border-bottom: 1px solid $gold;		
+		background-color: transparent;//$white;
+		//border-bottom: 1px solid $gold;		
 	}
 }
 
@@ -99,44 +106,59 @@ div.div_my_description_of_film {
 	//@include contour_of_bloсk;
 }
 
+// (конец)
+// Серединка блока: описание, ссылки на кинопоиск и просмотр на сайте
+
+//Блок с результатами голосования
+// (начало)
+
 div.div_vote {
 	margin-left: 80%;
 	height: 100%;
 	//@include contour_of_bloсk;
-	color: $white;
+	color: $black;
 	font-size: 12pt;
-	line-height: 1.5;
-	text-align: center;
+	line-height: 3.5;
+	text-align: right;
+	//@include contour_of_bloсk;
 }
 
 div.div_vote_up {
 	height: 50%;
-	border-left: 3px solid $black;
-	//border-bottom: 3px solid $black;
-	background-color: $green_dark;
+	width: 90%;	
+	background: url(image_path("hend_up.png")) no-repeat;
+	background-size: contain;
+
 	border-radius: 0 30px 0 0;
 	//@include contour_of_bloсk;
 
 	&:hover {
-		background-color: $green;
-		color: $black;
-		cursor: pointer;
+		//background-color: $green;
+		//color: $black;
+		//cursor: pointer;
 	}
 }
 
 div.div_vote_down {
 	height: 50%;
-	border-left: 3px solid $black;
-	background-color: $red_dark;
+	width: 90%;
+
+	background: url(image_path("hend_down.png")) no-repeat;
+	background-size: contain;
+
 	border-radius: 0 0 30px 0;
 	//@include contour_of_bloсk;
 
 	&:hover {
-		background-color: $red;
+		//background-color: $red;
 		//color: $black;
-		cursor: pointer;
+		//cursor: pointer;
 	}
 }
+
+// (конец)
+//Блок с результатами голосования
+
 
 
 ////////////////////////////

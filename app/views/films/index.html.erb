@@ -1,4 +1,4 @@
-<div id="div_menu_films">
+
     <ul id="ul_menu_films">
         <% @films.each do | film | %>
             <li class="li_menu_films">
@@ -13,15 +13,17 @@
                         <div class="div_my_description_of_film">  
                             <%= link_to("#{film.name} (#{film.year})", film_path(film), { class: "a_film_name" }) %>            
                             <p class="p_description_of_film">Режиссер: такой то</p>
-                            <p class="p_description_of_film"><%= film.short_description %> aaaaaaaaaaa aaaaaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaaaa aa aaaaaaa aaaaaa aaaaa aaaaaaaa aaaa aaaaaaaa aaaa aaaa aaaaaa aaaaa aaaaaaa aaaa aaaaa aaaaaaaa aaaa aaaaaaaa aaaa aaaa aaaaaa aaaaa aaaaaaa aaaa aaaaaaaa aaaa aaaaaaaa aaaa aaaa aaaaaa aaaa</p>                        
+                            <p class="p_description_of_film"><%= film.short_description %> aaaaaaaaaaa aaaaaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaaaa aa aaaaaaa aaaaaa aaaaa aaaaaaaa aaaaaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaaaa aa aaaaaaa aaaaaa aaaaa aaaaaaaa 
+                            aaaaaaaaaaa aaaaaaaa aaaaaaaa aaaaaaaaaa aa aaaaaaa aaaaaa aaaaa aaaaaaaa 
+                             </p>                        
                         </div>
                         <%= link_to("Посмотреть на www.kinopoisk.ru", film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
 
                     </div>
 
                     <div class="div_vote">
-                        <div class="div_vote_up">Понравился<br />(111)</div>
-                        <div class="div_vote_down">Не понравился<br />(333)</div>
+                        <div class="div_vote_up">(111)</div>
+                        <div class="div_vote_down">(333)</div>
                     </div>
                 </div>
 
@@ -29,9 +31,6 @@
             <div class="clear"></div>  
         <% end %>
     </ul>
-    <br /><br /><br />
-</div>
-
 
 <!--
 

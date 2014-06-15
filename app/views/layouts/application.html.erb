@@ -14,14 +14,17 @@
 			
 		</div>
 
-		<div id="div_yield">				
-			<%= yield %>
-			<!--
-			<div class="clear"></div>	
-			<div><%= debug(params) if Rails.env.development? %></div>
-			<br /><br /><br /><br />	
-			-->					
- 		</div>
+
+		<div id="div_wrapper_yield">
+			<div id="div_yield">				
+				<%= yield %>
+				<!--
+				<div class="clear"></div>	
+				<div><%= debug(params) if Rails.env.development? %></div>
+				<br /><br /><br /><br />	
+				-->					
+ 			</div>
+		</div>
 
 		<div id="div_navigation_top"> 			
 			<ul id="ul_navigation_top">					
