@@ -1,0 +1,23 @@
+<% @comments.each do |comment| %>
+
+    <%= comment.user.name %> оценил:
+
+    <% if comment.liked %>
+        <div class="div_comment_for_film div_comment_for_film_up">
+            <div class="div_image_for_comment">
+                <%= image_tag("hend_up.png", class: "image_for_comment") %> 
+            </div>
+            <%= comment.text %>
+        </div>
+    <% else %>
+        <div class="div_comment_for_film div_comment_for_film_down">
+            <div class="div_image_for_comment">
+                <%= image_tag("hend_down.png", class: "image_for_comment") %> 
+            </div>
+            <%= comment.text %>
+        </div>
+    <% end %>                       
+                          
+    <div class="clear"></div>
+
+<% end %>

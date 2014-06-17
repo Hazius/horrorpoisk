@@ -1,0 +1,21 @@
+<%= form_for(@comment) do |f| %>
+                
+                    Оставить комментарий:<br>
+                    <%= f.text_area :text, id: "text_area_for_comment" %>                
+
+                    <%= f.hidden_field :user_id, value: current_user().id %>
+                    <%= f.hidden_field :film_id %>
+                    <!-- Заполнение fiels_liked_for_comment происходит обработкой JS -->
+                    <%= f.hidden_field :liked, id: "fiels_liked_for_comment" %>
+
+                    <div class="div_submit_for_comment">
+                        <%= f.submit "Понравился", id: "submit_up_for_comment", class: "submit_for_comment" %>
+                    </div>
+
+                    <div class="div_submit_for_comment">
+                        <%= f.submit "Не понравился", id: "submit_down_for_comment", class: "submit_for_comment" %>
+                    </div>
+
+                    <div class="clear"></div>  
+
+                <% end %>

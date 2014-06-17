@@ -2,12 +2,20 @@ class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :edit, :update, :destroy]
 
 
+  def search
+
+    @films = Film.where("name like ?", "%#{params[:name_film_at_search]}%")
+
+    render 'index'
+  end
+
   # GET /films
   # GET /films.json
   def index
     #@films = Film.all    
     @films = Film.where(["year >= :year_from and year <= :year_to", 
-                        { year_from: params[:year_from], year_to: params[:year_to] }])
+                        { year_from: params[:year_from], year_to: params[:year_to] }
+                        ]).paginate(page: params[:page])
   end
 
   # GET /films/1
