@@ -1,15 +1,3 @@
 <div id="div_search">
-
-	<%= form_tag( 	{ controller: "films", action: "search" }, 
-					{ method: "post" } ) do %>	
-		
-					
-		<%= text_field_tag :name_film_at_search, nil, id: "field_input_of_search" %>
-		
-	
-		<%= submit_tag "", id: "submit_of_search" %>	
-
-
-	<% end %>
-
+	<%= render "field_for_search" %>
 </div>

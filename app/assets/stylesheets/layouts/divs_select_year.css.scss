@@ -1,0 +1,41 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$white: #FFFFFF;
+$black: #000000;
+$smoky: #F5F5F5;
+$gray: #808080;
+
+//отключаемый контур блоков:
+@mixin contour_of_bloсk
+{
+	outline: 1px solid black; 
+}
+
+a div.div_select_year {
+
+	//background-color: $gray;
+	//color: $smoky;
+
+	background-color: $smoky;
+	color: $gray;
+
+	font-size: 34px;
+	line-height: 1.4;	
+	text-align: center;
+	float: left;
+	height: 100%;
+	width: 120px;
+	//border-radius: 5px;
+	//@include contour_of_bloсk;	
+	box-shadow: 0 0 5px $black;	
+
+
+	-webkit-transition: background 1s ease;
+	&:hover {
+		background-color: $black;
+		color: $white;		
+	}
+
+}

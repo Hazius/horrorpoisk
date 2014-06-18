@@ -4,7 +4,8 @@ class FilmsController < ApplicationController
 
   def search
 
-    @films = Film.where("name like ?", "%#{params[:name_film_at_search]}%")
+    name = params[:name_film_at_search].mb_chars.downcase.to_s
+    @films = Film.where("name like ?", "%#{name}%")
 
     render 'index'
   end
@@ -15,7 +16,7 @@ class FilmsController < ApplicationController
     #@films = Film.all    
     @films = Film.where(["year >= :year_from and year <= :year_to", 
                         { year_from: params[:year_from], year_to: params[:year_to] }
-                        ]).paginate(page: params[:page])
+                        ]) #.paginate(page: params[:page])
   end
 
   # GET /films/1

@@ -12,7 +12,7 @@ $width_yield: 700px;
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
-	outline: 1px solid $white; 
+	//outline: 1px solid $white; 
 }
 
 @mixin a_top_and_bottom {
@@ -80,7 +80,7 @@ div#div_wrapper_yield {
 
 div#div_yield {
 	width: $width_yield; //100%;
-	margin: 20px auto;
+	margin: 10% auto;
 
 	//@include contour_of_bloсk;
 }
@@ -123,13 +123,6 @@ ul#ul_navigation_top li.li_navigation_top {
 //////////////////////////////
 // ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА (КОНЕЦ)
 //////////////////////////////
-
-div#wrapper_select_year {
-	height: 150px;
-	width: 720px;
-	margin: 50px auto 0 auto;
-	@include contour_of_bloсk;
-}
 
 //////////////////////////////
 // ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (НАЧАЛО)
