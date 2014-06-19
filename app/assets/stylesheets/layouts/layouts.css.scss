@@ -1,6 +1,4 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//layouts.css.scss
 
 $black: #000000;
 $gold: #FAA21A;
@@ -25,10 +23,10 @@ $width_yield: 700px;
 	}
 
 	&:hover {
-		color: $gold;
-		//background: $smoky;
+		color: $black;
+		background-color: $smoky;
 
-		border: 1px solid $gold;
+		//border: 1px solid $gold;
 		border-radius: 5px;
 		box-shadow: 0 0 50px $smoky;
 	}
@@ -70,11 +68,85 @@ div#div_background {
 }
 
 //////////////////////////////
+// ЛЕВАЯ ПАНЕЛЬКА (НАЧАЛО)
+//////////////////////////////
+div#wrapper_left_panel {
+	float: left;
+	width: 300px;
+	margin-left: 10%;
+}
+div.div_one_news {
+	width: 100%;
+	height: 300px;
+}
+img.img_top_of_one_news {
+	width: 100%;
+	height: 50%;
+}
+div.div_bottom_of_one_news {
+	width: 100%;
+	height: 50%;
+}
+//////////////////////////////
+// ЛЕВАЯ ПАНЕЛЬКА (КОНЕЦ)
+//////////////////////////////
+
+//////////////////////////////
 // ГЛАВНЫЙ БЛОК С КОНТЕНТОМ (НАЧАЛО)
 //////////////////////////////
 
-div#div_wrapper_yield {
-	position: absolute;
+div#div_label_image {
+	width: 100%;
+	height: 300px;
+	background: url(image_path("top.png")) no-repeat;
+	background-size: cover;
+}
+
+div#div_top_of_label_image {
+	width: 100%;
+	height: 200px;
+}
+
+div#div_search {
+	width: 100%;
+	height: 100px;
+	//margin: 20% auto 0 auto;
+	text-align: center;
+	background-color: $smoky;
+	opacity: 0.3;
+	//@include contour_of_bloсk;
+
+	-webkit-transition: all 2s ease;
+	&:hover {
+		opacity: 1;				
+	}
+}
+
+input#field_input_of_search {
+	line-height: 1;
+	//float: left;	
+	width: 50%;
+	height: 50px;
+	background-color: $white;
+	font-size: 20pt;
+	//border: $border_width solid $black;
+	//box-shadow: 0 0 50px $black;
+	outline: none;
+
+	&:hover {
+		//border: $border_width solid #191970;
+		//box-shadow: 0 0 10px $black;//#191970;
+	}
+
+	&:focus {
+		//border: $border_width solid #191970;
+		//box-shadow: 0 0 10px $black;//#191970;
+		outline: none;
+	}
+}
+
+div#div_wrapper_full_content {
+	//position: absolute;
 	width: 100%;
 }
 
@@ -95,14 +167,14 @@ div#div_yield {
 
 #div_navigation_top {
 	width: 100%;
-	height: 40px; // 5%; 
+	height: 60px; // 5%; 
 	position: fixed;
 	text-align: right;
 	top: 0;
-	border-bottom: 1px solid #191970; //$gold;
-	box-shadow: 0 0 30px #191970;
+	//border-bottom: 1px solid #191970; //$gold;
+	//box-shadow: 0 0 30px #191970;
 	background-color: $black;
-	@include contour_of_bloсk;
+	//@include contour_of_bloсk;
 }
 
 A.a_navigation_top 
@@ -131,7 +203,7 @@ ul#ul_navigation_top li.li_navigation_top {
 #div_select_year {	
 	text-align: center;
 	width: 100%;
-	height: 40px; // 5%;
+	height: 50px; // 5%;
 	padding-top: 10px;
 	position: fixed;
 	bottom: 0;

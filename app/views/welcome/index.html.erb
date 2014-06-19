@@ -1,3 +1,16 @@
-<div id="div_search">
-	<%= render "field_for_search" %>
+<div id="slider-wrap">
+  <div id="slider">
+    <a id="prewbutton" href="#">&lt;</a>
+    <a id="nextbutton" href="#">></a>
+    <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">
+      <%= image_tag "top.png", width:"640" %>
+    </div>
+    <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block">
+      <%= image_tag "mnogonogka_1.png", width:"640" %>
+    </div> 
+  </div>
+  <div class="sli-links">
+    <span class="control-slide">0</span>
+    <span class="control-slide active">1</span>
+  </div>
 </div>
