@@ -13,6 +13,13 @@ $gray: #808080;
 	outline: 1px solid black; 
 }
 
+div#wrapper_select_year {
+	height: 150px;
+	width: 720px;
+	margin: 50px auto 0 auto;
+	//@include contour_of_bloсk;
+}
+
 a div.div_select_year {
 
 	//background-color: $gray;
