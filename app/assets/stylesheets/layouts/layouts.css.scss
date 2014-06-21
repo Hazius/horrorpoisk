@@ -4,32 +4,12 @@ $black: #000000;
 $gold: #FAA21A;
 $white: #FFFFFF;
 $smoky: #F5F5F5;
-
-$width_yield: 700px;
+$gray: #808080;
 
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
-	outline: 1px solid $white; 
-}
-
-@mixin a_top_and_bottom {
-
-	color: $smoky;
-	text-decoration: none;
-
-	&:visited {
-		color: $smoky;
-	}
-
-	&:hover {
-		color: $black;
-		background-color: $smoky;
-
-		//border: 1px solid $gold;
-		border-radius: 5px;
-		box-shadow: 0 0 50px $smoky;
-	}
+	outline: 3px solid $gold; 
 }
 
 html {		
@@ -42,8 +22,6 @@ body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
-	//background: url(image_path("fon2.png"));
-	//background-size: 100%;	
 }
 
 .clear 
@@ -51,189 +29,93 @@ body {
 	clear:both;
 }
 
-div#wrapper {	
-	height: 100%;
-	margin: 0 auto;	
-}
-
-div#div_background {
-	border-top: 1px solid $black;
-	width: 100%;
-	height: 100%;
-	//top: 5%;
-	position: fixed;
-	background: url(image_path("top.png")) no-repeat;
-	background-size: cover;
-	//@include contour_of_bloсk;
-}
-
 //////////////////////////////
-// ЛЕВАЯ ПАНЕЛЬКА (НАЧАЛО)
+// ОБОЛОЧКА ВСЕЙ СТРАНИЦЫ
 //////////////////////////////
-div#wrapper_left_panel {
-	float: left;
-	width: 300px;
-	margin-left: 10%;
-}
-div.div_one_news {
-	width: 100%;
-	height: 300px;
-}
-img.img_top_of_one_news {
-	width: 100%;
-	height: 50%;
-}
-div.div_bottom_of_one_news {
-	width: 100%;
-	height: 50%;
-}
-//////////////////////////////
-// ЛЕВАЯ ПАНЕЛЬКА (КОНЕЦ)
-//////////////////////////////
-
-//////////////////////////////
-// ГЛАВНЫЙ БЛОК С КОНТЕНТОМ (НАЧАЛО)
-//////////////////////////////
-
-div#div_label_image {
-	width: 100%;
-	height: 300px;
-	background: url(image_path("top.png")) no-repeat;
-	background-size: cover;
-}
-
-div#div_top_of_label_image {
-	width: 100%;
-	height: 200px;
-}
-
-div#div_search {
-	width: 100%;
-	height: 100px;
-	//margin: 20% auto 0 auto;
-	text-align: center;
-	background-color: $smoky;
-	opacity: 0.3;
-	//@include contour_of_bloсk;
-
-	-webkit-transition: all 2s ease;
-	&:hover {
-		opacity: 1;				
-	}
-}
-
-input#field_input_of_search {
-	line-height: 1;
-	//float: left;	
-	width: 50%;
-	height: 50px;
+div#div_wrapper {	
+	min-height: 100%;
+	margin: 0 auto;
 	background-color: $white;
-	font-size: 20pt;
-	//border: $border_width solid $black;
-	//box-shadow: 0 0 50px $black;
-	outline: none;
-
-	&:hover {
-		//border: $border_width solid #191970;
-		//box-shadow: 0 0 10px $black;//#191970;
-	}
-
-	&:focus {
-		//border: $border_width solid #191970;
-		//box-shadow: 0 0 10px $black;//#191970;
-		outline: none;
-	}
 }
 
-div#div_wrapper_full_content {
-	//position: absolute;
+//////////////////////////////
+// ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА
+//////////////////////////////
+div#div_wrapper_top_navigation {
 	width: 100%;
-}
-
-div#div_yield {
-	width: $width_yield; //100%;
-	margin: 20px auto;
-
-	//@include contour_of_bloсk;
-}
-
-//////////////////////////////
-// ГЛАВНЫЙ БЛОК С КОНТЕНТОМ  (КОНЕЦ)
-//////////////////////////////
-
-//////////////////////////////
-// ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА (НАЧАЛО)
-//////////////////////////////
-
-#div_navigation_top {
-	width: 100%;
-	height: 60px; // 5%; 
-	position: fixed;
-	text-align: right;
-	top: 0;
-	//border-bottom: 1px solid #191970; //$gold;
-	//box-shadow: 0 0 30px #191970;
+	height: 50px; 
 	background-color: $black;
+	border-bottom: 5px solid $smoky;
 	//@include contour_of_bloсk;
 }
 
-A.a_navigation_top 
-{
-	@include a_top_and_bottom;
-}
-
-ul#ul_navigation_top {
-	margin-right: 100px;	
-}
-
-ul#ul_navigation_top li.li_navigation_top {	
-	font-size: 14pt;
-	display: inline;
-	margin-right: 10px;		
-}
-
 //////////////////////////////
-// ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬКА (КОНЕЦ)
+// БОЛЬШОЙ БЛОК СВЕРХУ ПОД ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКОЙ
 //////////////////////////////
-
-//////////////////////////////
-// ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (НАЧАЛО)
-//////////////////////////////
-
-#div_select_year {	
-	text-align: center;
+div#div_wrapper_top_big_label {
 	width: 100%;
-	height: 50px; // 5%;
-	padding-top: 10px;
-	position: fixed;
-	bottom: 0;
+	min-height: 400px;
+	position: relative;
 	background-color: $black;
-	border-top: 1px solid #191970; //$gold;
-	box-shadow: 0 0 30px #191970;  
+	//background: url(image_path("top.png")) no-repeat;
+	//background-size: cover;
 
 	//@include contour_of_bloсk;
 }
 
-ul#ul_select_year {
-	margin: 0;
-}
-
-ul#ul_select_year li.bt_select_year {
-	font-size: 18pt;
-	display: inline;
-	margin: 0 10px 0 0;	
-	//border: 1px solid $black;
-
-	//&:hover {
-		//cursor: pointer;
-	//}
-}
-
-A.a_navigation_bottom {
-	line-height: 1;
-	@include a_top_and_bottom;
+//////////////////////////////
+// ПАНЕЛЬКА ВЫБОРА ДИАПАЗОНА ГОДОВ ДЛЯ ФИЛЬМОВ
+//////////////////////////////
+div#div_wrapper_select_year {
+	height: 50px;
+	width: 100%;
+	background-color: $smoky;
+	//border-top: 5px solid $black;
+	border-bottom: 5px solid $black;
+	//@include contour_of_bloсk;
 }
 
 //////////////////////////////
-// ПАНЕЛЬКА ВЫБОРА ГОДА ФИЛЬМОВ (КОНЕЦ)
+// ОБЛОЧКА ЦЕНТРАЛЬНЫХ БЛОКОВ
 //////////////////////////////
+div#div_wrapper_center {
+	width: 1200px;
+	margin: 0 auto;
+	//@include contour_of_bloсk;
+}
+
+//////////////////////////////
+// ЛЕВАЯ ПАНЕЛЬКА
+//////////////////////////////
+div#div_wrapper_left_panel {
+	float: left;
+	width: 200px;
+	background-color: $white;
+	//@include contour_of_bloсk;
+}
+
+//////////////////////////////
+// ПРАВАЯ ПАНЕЛЬКА
+//////////////////////////////
+div#div_wrapper_right_panel {
+	float: right;
+	width: 200px;
+	background-color: $white;
+	//@include contour_of_bloсk;
+}
+
+//////////////////////////////
+// БЛОК YIELD
+//////////////////////////////
+div#div_wrapper_yield {
+	width: 800px;
+
+	min-height: 800px;
+	margin: 0 0 0 200px;
+	padding-top: 20px;	
+	background-color: $white;
+	//@include contour_of_bloсk;
+}
+
+
+

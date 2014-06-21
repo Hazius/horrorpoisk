@@ -1,0 +1,70 @@
+$white: #FFFFFF;
+$black: #000000;
+$gold: #FAA21A;
+$smoky: #F5F5F5;
+
+//отключаемый контур блоков:
+@mixin contour_of_bloсk
+{
+	outline: 1px solid $white; 
+}
+
+//////////////////////
+// ЛЕВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
+//////////////////////
+
+div#div_left_of_navigation_top {
+	width: 50%;
+	height: 100%;
+	float: left;
+	margin: 0;
+
+	//@include contour_of_bloсk;
+}
+
+//////////////////////
+// ПРАВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
+//////////////////////
+
+$width_link: 130px;
+
+div#div_right_of_navigation_top {
+	width: 50%;
+	height: 100%;
+	margin: 0 0 0 50%;
+	//@include contour_of_bloсk;
+}
+
+ul#ul_right_of_navigation_top {
+	height: 100%;	
+	width: $width_link*3;
+	padding: 0;
+	margin: 0 auto;
+	//@include contour_of_bloсk;
+}
+
+ul#ul_right_of_navigation_top  li {
+	margin: 0;
+	display: inline;
+
+	//@include contour_of_bloсk;
+}
+
+div.div_link_right_of_navigation_top {
+	height: 100%;
+	width: $width_link;	
+	float: left;
+	text-align: center;
+	font-size: 20px;
+	line-height: 2.5;
+	color: $smoky;
+	margin: 0;
+
+	//@include contour_of_bloсk;
+
+	-webkit-transition: background 1s ease;
+	&:hover {
+		background-color: $smoky;
+		color: $black;
+	}
+}

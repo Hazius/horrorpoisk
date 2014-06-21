@@ -1,0 +1,39 @@
+<ul id="ul_select_year">
+
+	<li>
+		<%= link_to(films_path(year_from: "1960", year_to: "2014")) do %>
+ 			<div class="div_select_year">1960-2014</div>
+		<% end %>
+	</li>
+
+	<li>
+		<%= link_to(films_path(year_from: "1960", year_to: "1990")) do %>
+			<div class="div_select_year">1960-1990</div>
+		<% end %>
+	</li>
+
+	<li>
+		<%= link_to(films_path(year_from: "1990", year_to: "2000")) do %>
+			<div class="div_select_year">1990-2000</div>
+		<% end %>
+	</li>
+
+	<li>
+		<%= link_to(films_path(year_from: "2000", year_to: "2010")) do %>
+			<div class="div_select_year">2000-2010</div>
+		<% end %>
+	</li>
+
+	<li>
+		<%= link_to(films_path(year_from: "2010", year_to: "2014")) do %>
+			<div class="div_select_year">2010-2014</div>
+		<% end %>
+	</li>
+
+	<li>
+		<%= link_to(films_path(year_from: "2014", year_to: "2014")) do %>
+			<div class="div_select_year">2014</div>
+		<% end %>
+	</li>
+
+</ul>

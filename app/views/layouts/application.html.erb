@@ -9,76 +9,42 @@
 </head>
 <body>
 
-	<div id="wrapper">	
+	<div id="div_wrapper">		
 
-		<!--
-		<div id="div_background">
-			
-		</div>		
-		-->		
+		<div id="div_wrapper_top_navigation">		
+			<%= render "layouts/top_navigation" %>
+ 		</div>
 
-		<div id="div_label_image">
-			<div id="div_top_of_label_image">
-			</div> 
-			<div id="div_search">
-				<%= render "welcome/field_for_search" %>
-			</div>		
+		<div id="div_wrapper_top_big_label">
+			<%= render "layouts/top_big_label" %>
 		</div>
 
-		<div id="div_wrapper_full_content">
+		<div id="div_wrapper_select_year">
+			<%= render "layouts/select_year" %>
+		</div>	
+	
+		<div id="div_wrapper_center">
 
-			<div id="wrapper_select_year">
-				<div id="div_divs_select_year"><%= render "layouts/divs_select_year" %></div>
+			<div id="div_wrapper_left_panel">
+				<%= render "layouts/left_panel" %>
 			</div>	
-			<div id="wrapper_left_panel">
-				<div class="div_one_news">
-					<%= image_tag "mnogonogka_1.png", class: "img_top_of_one_news" %>
-					<div class="div_bottom_of_one_news"></div>
-				</div>
-			</div>	
-			<div id="div_yield">								
+
+			<div id="div_wrapper_right_panel">
+				<%= render "layouts/left_panel" %>
+			</div>
+
+			<div id="div_wrapper_yield">
 				<%= yield %>
 				<!--
 				<div class="clear"></div>	
 				<div><%= debug(params) if Rails.env.development? %></div>
 				<br /><br /><br /><br />	
 				-->					
- 			</div>
-		</div>
+ 			</div> 				
 
-		<div id="div_navigation_top"> 			
-			<ul id="ul_navigation_top">					
+ 		</div>
 
-				<li class="li_navigation_top"><%= link_to("Главная", root_path, class: "a_navigation_top") %></li>				
-				
-				<% if signed_in?() %>
-					<li class="li_navigation_top"><%= link_to("Профиль", edit_user_path(current_user()), class: "a_navigation_top") %></li>
-					<li class="li_navigation_top"><%= link_to("Выход", session_path(current_user()), method: :delete, class: "a_navigation_top") %></li>	
-				<% else %>
-					<li class="li_navigation_top"><%= link_to("Вход", new_session_path, class: "a_navigation_top") %></li>				
-					<li class="li_navigation_top"><%= link_to("Регистрация", new_user_path, class: "a_navigation_top") %></li>	
-				<% end %>
-
-			</ul>
- 		</div>	
-
-<!--
- 		<div id="div_select_year">
- 			<ul id="ul_select_year">
- 				<li class="bt_select_year"><%= link_to("(1960-2014)", films_path(year_from: "1960", year_to: "2014"), class: "a_navigation_bottom") %></li>
- 				<li class="bt_select_year"><%= link_to("(1960-1990)", films_path(year_from: "1960", year_to: "1990"), class: "a_navigation_bottom") %></li>
- 				<li class="bt_select_year"><%= link_to("(1990-2000)", films_path(year_from: "1990", year_to: "2000"), class: "a_navigation_bottom") %></li>
- 				<li class="bt_select_year"><%= link_to("(2000-2010)", films_path(year_from: "2000", year_to: "2010"), class: "a_navigation_bottom") %></li>
- 				<li class="bt_select_year"><%= link_to("(2010-2014)", films_path(year_from: "2010", year_to: "2014"), class: "a_navigation_bottom") %></li>
- 				<li class="bt_select_year"><%= link_to("(2014)", films_path(year_from: "2014", year_to: "2014"), class: "a_navigation_bottom") %></li>
- 			</ul>
- 		</div>			
--->
-
-	</div>
-
-	
-	
+	</div>	
 
 </body>
 </html>

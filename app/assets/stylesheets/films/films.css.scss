@@ -28,19 +28,22 @@ ul#ul_menu_films {
 	list-style: none;
 	width: $width_screen;
 	margin: 0 auto;
+	padding: 0;
 	//@include contour_of_bloсk;
 }
 
 li.li_menu_films {
-	margin-top: 20px;	
+	margin-top: 20px;
+	width: $width_screen;
 	height: $height_blok;
 	text-align: left;
 	font-size: 14pt;
 	color: $black;
 	background-color: $white;
-	border: 1px solid $black;
-	border-radius: 0 30px 30px 0;
-	box-shadow: 0 0 30px $smoky;
+	border-top: 1px solid $black;
+	//border-radius: 0 10px 10px 0;
+	//box-shadow: 0 0 30px $black;
+	box-shadow: -7px 8px 10px $black;
 
 	//@include contour_of_bloсk;
 }
@@ -58,6 +61,7 @@ div.div_image_at_menu_films {
 
 img.image_at_menu_films {
 	height: $height_blok;
+	margin: 0;
 }
 
 
