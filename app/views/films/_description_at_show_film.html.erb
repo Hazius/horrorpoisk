@@ -1,0 +1,22 @@
+<p>
+	<% @film.name_rus[0] = @film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву %>
+    <b><%= @film.name_rus %></b>      
+</p>
+
+<p>
+    <b>Режиссер:</b> <%= @film.producer %>
+</p>
+
+<p>
+    <b>Год:</b> <%= @film.year %>
+</p>
+
+<p>
+    <b>Полное описание:</b>
+    <br />
+    <%= @film.full_description %>
+</p>
+
+<p>     
+    <%= link_to("Посмотреть на www.kinopoisk.ru", @film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
+</p>

@@ -10,7 +10,9 @@ Scary::Application.routes.draw do
 	root 'welcome#index'
 
   match "search", to: "films#search", via: "get"
+  
   match "admin/index", to: "admin#index", via: "get"
+  match "admin/edit_file", to: "admin#edit_file", via: "get"
   match "admin/show_file", to: "admin#show_file", via: "post"
   match "admin/save_file", to: "admin#save_file", via: "post"
 

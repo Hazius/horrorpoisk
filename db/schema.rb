@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619113545) do
+ActiveRecord::Schema.define(version: 20140622073113) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140619113545) do
   end
 
   create_table "films", force: true do |t|
-    t.string   "name"
+    t.string   "name_rus"
     t.integer  "year"
     t.text     "short_description"
     t.text     "full_description"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20140619113545) do
     t.datetime "updated_at"
     t.string   "image"
     t.string   "producer"
+    t.string   "name_eng"
+    t.boolean  "now_in_cinemas",    default: false
+    t.boolean  "future_in_cinemas", default: false
   end
 
   create_table "users", force: true do |t|

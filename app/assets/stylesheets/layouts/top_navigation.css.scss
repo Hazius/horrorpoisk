@@ -13,6 +13,8 @@ $smoky: #F5F5F5;
 // ЛЕВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
+$width_left_link: 300px;
+
 div#div_left_of_navigation_top {
 	width: 50%;
 	height: 100%;
@@ -22,11 +24,23 @@ div#div_left_of_navigation_top {
 	//@include contour_of_bloсk;
 }
 
+ul#ul_left_of_navigation_top {
+	height: 100%;	
+	width: $width_left_link*1;
+	padding: 0;
+	margin: 0 auto;
+}
+
+div.div_link_left_of_navigation_top {
+	width: $width_left_link;
+	//@include contour_of_bloсk;
+}
+
 //////////////////////
 // ПРАВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
-$width_link: 130px;
+$width_right_link: 130px;
 
 div#div_right_of_navigation_top {
 	width: 50%;
@@ -37,22 +51,29 @@ div#div_right_of_navigation_top {
 
 ul#ul_right_of_navigation_top {
 	height: 100%;	
-	width: $width_link*3;
+	//width: $width_right_link*4;
 	padding: 0;
-	margin: 0 auto;
+	margin: 0;//0 auto;
 	//@include contour_of_bloсk;
 }
 
-ul#ul_right_of_navigation_top  li {
+div.div_link_right_of_navigation_top {
+	width: $width_right_link;
+}
+
+//////////////////////
+// ОБЩИЕ ПРАВИЛА
+//////////////////////
+
+ul#ul_right_of_navigation_top  li, ul#ul_left_of_navigation_top  li {
 	margin: 0;
 	display: inline;
 
 	//@include contour_of_bloсk;
 }
 
-div.div_link_right_of_navigation_top {
-	height: 100%;
-	width: $width_link;	
+div.div_link_right_of_navigation_top, div.div_link_left_of_navigation_top {
+	height: 100%;		
 	float: left;
 	text-align: center;
 	font-size: 20px;

@@ -1,0 +1,72 @@
+$gold: #FAA21A;
+$black: #000000;
+$smoky: #F5F5F5;
+$white: #FFFFFF;
+$green_dark: #006400;
+$red_dark: #8B0000;
+$green: #90EE90;//#008000;
+$red: #FF0000;
+$green_pale: #98FB98; //бледный
+$red_pale: #FF6347;
+
+$height_comment_block: 200px;
+
+//отключаемый контур блоков:
+@mixin contour_of_bloсk
+{
+	outline: 1px solid $gold; 
+}
+
+div.div_comment_for_film {
+	//@include contour_of_bloсk;
+	min-height: 100px;// $height_comment_block;
+	margin-top: 30px;
+	border-bottom: 1px solid #c0c0c0;
+	//border-radius: 5px;	
+	//@include contour_of_bloсk;
+}
+
+div.div_comment_for_film_up {
+	//background-color: $green_pale;
+	//box-shadow: 0 0 5px $green_pale;
+	//box-shadow: 10px -9px 7px -8px $green_pale;
+	box-shadow: 0 -3px 4px 0 $green_pale;
+}
+
+div.div_comment_for_film_down {
+	//background-color: $red_pale;
+	//box-shadow: 0 0 5px $red_pale;
+	//box-shadow: 10px -9px 7px -8px $red_pale;
+	box-shadow: 0 -3px 4px 0 $red_pale;
+}
+
+div.div_image_for_comment {
+	min-height: 100px; //$height_comment_block;
+	width: 100px;
+	float: left;
+}
+
+img.image_for_comment {
+	height: 100px;
+}
+
+div.div_text_of_comment {
+	min-height: 80px;//$height_comment_block - 20px;
+	//@include contour_of_bloсk;
+}
+
+div.div_info_of_comment {
+	height: 20px;
+	//@include contour_of_bloсk;
+}
+
+span.autor_of_comment {
+	display: block;
+	float: left;
+	width: 50%
+}
+
+span.date_create_comment {
+	display: block;
+
+}

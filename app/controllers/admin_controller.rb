@@ -3,18 +3,29 @@ class AdminController < ApplicationController
 	before_action :admin_user
 
   	def index
-  		@content = ""
-  		@file_path = ""
+  		
   	end
+
+    def edit_file
+        @content = ""
+        @file_path = ""
+    end
 
   	def show_file
   		@file_path = params[:file_path]
+  		
+      if (File.exist?(@file_path))
+        file = File.open(@file_path)
+  		  @file_content = file.read()
+  		  file.close()
+        flash.now[:notice] = "Файл открыт"
+      else
+        file = File.new(@file_path, "w")
+        @file_content = ""
+        flash.now[:notice] = "Файл создан"
+      end
 
-  		file = File.open(@file_path)
-  		@file_content = file.read()
-  		file.close()
-
-  		render "index"
+  		render "edit_file"
   	end
 
   	def save_file
@@ -27,14 +38,14 @@ class AdminController < ApplicationController
 
         flash.now[:notice] = "Данные сохранены"
 
-  		render "index"
+  		render "edit_file"
   	end
 
   	private
 
   		def admin_user	
   			redirect_to(root_url) unless signed_in?
-  			redirect_to(root_url) unless current_user.admin?
+  			redirect_to(root_url) unless current_user().admin?
   		end
 
 end

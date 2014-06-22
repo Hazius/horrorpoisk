@@ -5,7 +5,7 @@ class FilmsController < ApplicationController
   def search
 
     name = params[:name_film_at_search].mb_chars.downcase.to_s
-    @films = Film.where("name like ?", "%#{name}%")
+    @films = Film.where("name_rus like ?", "%#{name}%")
 
     render 'index'
   end
@@ -76,6 +76,6 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:name, :year, :short_description, :full_description, :link_to_kinopoisk)
+      params.require(:film).permit(:name_rus, :name_eng, :producer, :year, :short_description, :full_description, :link_to_kinopoisk, :image)
     end
 end

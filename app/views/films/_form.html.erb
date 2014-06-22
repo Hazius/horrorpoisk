@@ -12,8 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name_rus %><br>
+    <%= f.text_field :name_rus %>
+  </div>
+  <div class="field">
+    <%= f.label :name_eng %><br>
+    <%= f.text_field :name_eng %>
+  </div>
+  <div class="field">
+    <%= f.label :producer %><br>
+    <%= f.text_field :producer %>
   </div>
   <div class="field">
     <%= f.label :year %><br>
@@ -30,6 +38,18 @@
   <div class="field">
     <%= f.label :link_to_kinopoisk %><br>
     <%= f.text_field :link_to_kinopoisk %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :now_in_cinemas %><br>
+    <%= f.text_field :now_in_cinemas %>
+  </div>
+  <div class="field">
+    <%= f.label :future_in_cinemas %><br>
+    <%= f.text_field :future_in_cinemas %>
   </div>
   <div class="actions">
     <%= f.submit %>

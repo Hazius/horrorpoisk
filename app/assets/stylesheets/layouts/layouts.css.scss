@@ -79,6 +79,7 @@ div#div_wrapper_select_year {
 // ОБЛОЧКА ЦЕНТРАЛЬНЫХ БЛОКОВ
 //////////////////////////////
 div#div_wrapper_center {
+	min-height: 100px;
 	width: 1200px;
 	margin: 0 auto;
 	//@include contour_of_bloсk;
@@ -99,8 +100,9 @@ div#div_wrapper_left_panel {
 //////////////////////////////
 div#div_wrapper_right_panel {
 	float: right;
-	width: 200px;
+	width: 300px;
 	background-color: $white;
+	//padding-top: 20px;
 	//@include contour_of_bloсk;
 }
 
@@ -108,14 +110,22 @@ div#div_wrapper_right_panel {
 // БЛОК YIELD
 //////////////////////////////
 div#div_wrapper_yield {
-	width: 800px;
+	width: 850px;
 
 	min-height: 800px;
-	margin: 0 0 0 200px;
-	padding-top: 20px;	
+	margin: 0 0 50px 0;
+	//padding: 20px 0;	
 	background-color: $white;
 	//@include contour_of_bloсk;
 }
 
+//////////////////////////////
+// БЛОК ПОДВАЛА
+//////////////////////////////
+div#div_wrapper_footer {
+	height: 200px;
+	width: 100%;
+	background-color: $black;
+}
 
 

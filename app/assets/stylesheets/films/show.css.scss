@@ -1,0 +1,78 @@
+$gold: #FAA21A;
+$black: #000000;
+$smoky: #F5F5F5;
+$white: #FFFFFF;
+$green_dark: #006400;
+$red_dark: #8B0000;
+$green: #90EE90;//#008000;
+$red: #FF0000;
+$green_pale: #98FB98; //бледный
+$red_pale: #FF6347;
+
+$height_blok: 150px;
+$width_screen: 700px;
+
+//отключаемый контур блоков:
+@mixin contour_of_bloсk
+{
+	outline: 1px solid $gold; 
+}
+
+//@import "bootstrap";
+
+div#div_wrapper_show_film {
+	//width: $width_screen; //90%;
+	margin: 0 auto;	
+
+	background-color: $white;
+	//border-top: 1px solid $black;
+	box-shadow: -7px 8px 10px $black;
+
+	//@include contour_of_bloсk;
+}
+
+//// КАРТИНКА (НАЧАЛО)
+
+$height_image_at_show_film: 400px;
+
+div#div_wrapper_for_image_show_film {		
+	height: $height_image_at_show_film;
+	float: left;
+
+	//@include contour_of_bloсk;
+}
+
+img#image_at_show_film {
+	height: $height_image_at_show_film;
+	margin: 0 20px;
+	//@include contour_of_bloсk;
+}
+//// КАРТИНКА (КОНЕЦ)
+
+//// ОПИСАНИЕ (НАЧАЛО)
+div#div_wrapper_for_description_show_film {
+	height: $height_image_at_show_film;
+	//@include contour_of_bloсk;
+}
+//// ОПИСАНИЕ (КОНЕЦ)
+
+// Форма создания коммента(начало):
+div#div_wrapper_for_form_create_comment {
+	width: 80%;
+	margin: 20px auto 0 auto;
+	//@include contour_of_bloсk;
+}
+// Форма создания коммента(конец):
+
+// Вывод всех комментариев (начало)
+
+div#div_wrapper_for_all_comments {
+	//@include contour_of_bloсk;
+	font-size: 15px;
+	//min-height: 20px;
+	margin: 30px 0;
+}
+
+// Вывод всех комментариев (конец)
+
+//// БЛОК КОММЕНТАРИЕВ (КОНЕЦ)

@@ -1,61 +1,30 @@
-<div id="div_show_film">   
+<div id="div_wrapper_show_film">   
 
-    <div id="div_image_at_show_film">
+    <div id="div_wrapper_for_image_show_film">
         <%= image_tag(@film.image, id: "image_at_show_film") %>   
     </div>  
 
-    <div id="div_description_at_show_film">
-
-        <p>
-            <b><%= @film.name %></b>      
-        </p>
-
-        <p>
-            <b>Режиссер:</b> <%= @film.producer %>
-        </p>
-
-        <p>
-            <b>Год:</b> <%= @film.year %>
-        </p>
-
-        <p>
-            <b>Полное описание:</b>
-            <br />
-            <%= @film.full_description %>
-        </p>
-
-        <p>     
-            <%= link_to("Посмотреть на www.kinopoisk.ru", @film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
-        </p>
-
+    <div id="div_wrapper_for_description_show_film">
+        <%= render "description_at_show_film" %>
     </div>  
 
-    <div class="clear"></div>  
-
-    <div id="div_comments">
-
-        <div id="form_for_create_comment">
-
-            <% if signed_in? %>                  
-                <%= render "form_for_comment" %>
-            <% else %>
-                <p>Только зарегистрированные пользователи могут голосовать и оставлять комментарии...</p>
-            <% end %>    
-
+    <% if signed_in? %>          
+        <div id="div_wrapper_for_form_create_comment">        
+            <%= render "form_for_comment" %>
         </div>
+    <% else %>
+        <p>Только зарегистрированные пользователи могут голосовать и оставлять комментарии...</p>
+    <% end %>       
+               
 
-        <div id="div_all_comments_for_film">            
-
-            <% if ( @comments.any? ) %> 
-                <%= render "comments" %>  
-            <% else %>
-                <p>Комментариев пока нет...</p>
-            <% end %>
-        
+    <% if ( @comments.any? ) %> 
+        <div id="div_wrapper_for_all_comments"> 
+            <%= render "all_comments" %>  
         </div>
-
-    </div>
-
+    <% else %>
+        <p>Комментариев пока нет...</p>
+    <% end %>
+          
 </div>
 
 <!--

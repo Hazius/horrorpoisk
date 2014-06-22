@@ -1,24 +1,5 @@
-<h1>Admin</h1>
-<br />
-<h1><%= flash[:notice] %></h1>
+<h1>Зона администратора</h1>
 
-<%= form_tag( {action: "show_file"} ) do  %>
-
-	<%= text_field_tag(:file_path, @file_path, size: "100") %><br />
-
-	<%= submit_tag("Открыть") %>
-
-<% end %>
-
-
-<%= form_tag( {action: "save_file"} ) do  %>
-
-	<%= text_area_tag(:file_content, @file_content, size: "100x50") %><br />
-
-	<%= hidden_field_tag(:file_path, @file_path, size: "100") %>
-
-	<%= submit_tag("Сохранить") %>
-
-<% end %>
-
-<br /><br /><br /><br /><br /><br /><br />
+<ul>
+	<li><%= link_to("Редатор исходных файлов проекта", admin_edit_file_path) %></li>
+</ul>

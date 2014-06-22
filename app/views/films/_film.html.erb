@@ -6,8 +6,8 @@
 
     <div class="div_description_of_film">
         <div class="div_my_description_of_film">
-            <% film.name[0] = film.name[0].mb_chars.upcase.to_s #капсим первую букву %>  
-            <%= link_to("#{film.name} (#{film.year})", film_path(film), { class: "a_film_name" }) %>            
+            <% film.name_rus[0] = film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву %>  
+            <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>            
             <p class="p_description_of_film"><b>Режиссер:</b> <%= film.producer %></p>
             <p class="p_description_of_film"><b>Описание:</b> <%= film.short_description %></p>
         </div>

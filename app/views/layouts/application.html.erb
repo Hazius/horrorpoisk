@@ -25,23 +25,28 @@
 	
 		<div id="div_wrapper_center">
 
+<!--
 			<div id="div_wrapper_left_panel">
 				<%= render "layouts/left_panel" %>
 			</div>	
+-->
 
 			<div id="div_wrapper_right_panel">
-				<%= render "layouts/left_panel" %>
+				<%= render "layouts/right_panel" %>
 			</div>
 
 			<div id="div_wrapper_yield">
-				<%= yield %>
-				<!--
+				<%= yield %>			
 				<div class="clear"></div>	
 				<div><%= debug(params) if Rails.env.development? %></div>
-				<br /><br /><br /><br />	
-				-->					
+				<br /><br /><br /><br />								
  			</div> 				
 
+ 		</div>
+ 		
+ 		<div class="clear"></div>
+ 		<div id="div_wrapper_footer">
+ 			
  		</div>
 
 	</div>	
