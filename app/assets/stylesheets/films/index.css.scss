@@ -15,31 +15,32 @@ $width_screen: 700px;
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
-	outline: 1px solid $gold; 
+    outline: 1px solid $gold; 
 }
 
 ul#ul_menu_films {
-	list-style: none;
-	width: $width_screen;
-	margin: 0 auto;
-	padding: 0;
-	//@include contour_of_bloсk;
+    list-style: none;
+    width: $width_screen;
+    margin: 0 auto;
+    padding: 0;
+    //@include contour_of_bloсk;
 }
 
 li.li_menu_films {
-	margin-top: 20px;
-	width: $width_screen;
-	height: $height_blok;
-	text-align: left;
-	font-size: 14pt;
-	color: $black;
-	background-color: $white;
-	border-top: 1px solid $black;
-	//border-radius: 0 10px 10px 0;
-	//box-shadow: 0 0 30px $black;
-	box-shadow: -7px 8px 10px $black;
+    margin-top: 20px;
+    width: $width_screen;
+    height: $height_blok;
+    text-align: left;
+    font-size: 14pt;
+    color: $black;
+    background-color: $white;
+    border-top: 1px solid $black;
+    border-right: 1px solid $black;
+    //border-radius: 0 10px 10px 0;
+    //box-shadow: 0 0 30px $black;
+    box-shadow: -7px 8px 10px $black;
 
-	//@include contour_of_bloсk;
+    //@include contour_of_bloсk;
 }
 
 //////////////////////////////////////////
@@ -47,15 +48,15 @@ li.li_menu_films {
 // (начало)
 
 div.div_image_at_menu_films {
-	float: left;
-	height: $height_blok;
-	width: $height_blok;
-	//@include contour_of_bloсk;
+    float: left;
+    height: $height_blok;
+    width: $height_blok;
+    //@include contour_of_bloсk;
 }
 
 img.image_at_menu_films {
-	height: $height_blok;
-	margin: 0;
+    height: $height_blok;
+    margin: 0;
 }
 
 
@@ -69,34 +70,34 @@ img.image_at_menu_films {
 
 a.a_film_name, a.a_film_kinopoisk {
 
-	font-size: 12pt;
-	text-decoration: none;	
-	line-height: 1.2;
+    font-size: 12pt;
+    text-decoration: none;  
+    line-height: 1.2;
 
-	color: $black;
-	text-decoration: none;
-	margin: 0;
-	width: 70%;
-	//padding: 0 20px;
+    color: $black;
+    text-decoration: none;
+    margin: 0;
+    width: 70%;
+    //padding: 0 20px;
 
-	&:visited {
-		color: $black;
-	}
+    &:visited {
+        color: $black;
+    }
 
-	&:hover {
-		color: $gold;
-		background-color: transparent;//$white;
-		//border-bottom: 1px solid $gold;		
-	}
+    &:hover {
+        color: $gold;
+        background-color: transparent;//$white;
+        //border-bottom: 1px solid $gold;       
+    }
 }
 
 a.a_film_name {
-	border-bottom: 1px solid $black;
+    border-bottom: 1px solid $black;
 }
 
 a.a_film_kinopoisk {
-	border-top: 1px solid $black;
-	bottom: 0;
+    border-top: 1px solid $black;
+    bottom: 0;
 }
 
 // (конец)
@@ -105,29 +106,29 @@ a.a_film_kinopoisk {
 
 
 p.p_description_of_film {
-	font-size: 9pt;
-	line-height: 1;
-	margin: 3px 0;
+    font-size: 9pt;
+    line-height: 1;
+    margin: 3px 0;
 }
 
 div.div_options_at_film {
-	margin-left: $height_blok;
-	height: 100%;	
-	//@include contour_of_bloсk;
+    margin-left: $height_blok;
+    height: 100%;   
+    //@include contour_of_bloсk;
 }
 
 div.div_description_of_film {
-	//margin-top: 10px;
-	width: 80%;
-	//border: 1px solid $black;
-	height: 100%;
-	float: left;
-	//@include contour_of_bloсk;
+    //margin-top: 10px;
+    width: 80%;
+    //border: 1px solid $black;
+    height: 100%;
+    float: left;
+    //@include contour_of_bloсk;
 }
 
-div.div_my_description_of_film {	
-	height: 80%;
-	//@include contour_of_bloсk;
+div.div_my_description_of_film {    
+    height: 80%;
+    //@include contour_of_bloсk;
 }
 
 
@@ -135,27 +136,28 @@ div.div_my_description_of_film {
 // (начало)
 
 div.div_vote {
-	margin-left: 80%;
-	height: 100%;
-	//@include contour_of_bloсk;
-	color: $black;
-	font-size: 12pt;
-	line-height: 3.5;
-	//text-align: right;
-	//@include contour_of_bloсk;
+    margin-left: 80%;
+    height: 100%;
+    //@include contour_of_bloсk;
+    color: $black;
+    font-size: 12pt;
+    line-height: 3.5;
+    //text-align: right;
+    //@include contour_of_bloсk;
 }
 
 img.image_vote {
-	height: 50%;
-	float: left;
-	//@include contour_of_bloсk;
+    height: 20%;
+    float: left;
+    @include contour_of_bloсk;
 }
 
 p.p_count_vote {
-	height: 50%;
-	line-height: 5;
-	margin: 0;
-	font-size: 9pt;
+    height: 20%;
+    line-height: 2;
+    margin: 0;
+    font-size: 9pt;
+@include contour_of_bloсk;
 }
 
 // (конец)

@@ -22,10 +22,11 @@ $width_screen: 700px;
 
 div#div_wrapper_show_film {
 	//width: $width_screen; //90%;
-	margin: 0 auto;	
+	margin: 20px auto 0 auto;	
 
 	background-color: $white;
-	//border-top: 1px solid $black;
+	border-top: 1px solid $black;
+border-right: 1px solid $black;
 	box-shadow: -7px 8px 10px $black;
 
 	//@include contour_of_bloсk;
@@ -44,7 +45,7 @@ div#div_wrapper_for_image_show_film {
 
 img#image_at_show_film {
 	height: $height_image_at_show_film;
-	margin: 0 20px;
+	margin: 20px 20px 0 20px;
 	//@include contour_of_bloсk;
 }
 //// КАРТИНКА (КОНЕЦ)

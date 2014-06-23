@@ -1,5 +1,7 @@
 <% if signed_in?() && current_user().admin? %>
   <%= link_to 'New Film', new_film_path %>
+<% else %>
+<br />
 <% end %>
 
 <ul id="ul_menu_films">    
