@@ -51,14 +51,14 @@ div#div_search {
         //background-color: $smoky;
         //border-top: 5px solid $black;   
         //border-bottom: 30px solid $smoky;
-        height: 100px;
+        //height: 100px;
         //padding-top: 10px;  
     }
 }
 
 input#field_input_of_search {
     line-height: 1;
-    width: 760px;
+    width: 400px;//760px;
     height: 40px;
     background-color: $white;
     font-size: 25px;
@@ -68,9 +68,12 @@ input#field_input_of_search {
 
     //@include contour_of_bloсk;
 
+    -webkit-transition: all 1s ease;
+
     &:hover {
         //border: $border_width solid #191970;
         //box-shadow: 0 0 10px $black;//#191970;
+        width: 760px;
     }
 
     &:focus {

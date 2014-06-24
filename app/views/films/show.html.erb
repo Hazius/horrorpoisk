@@ -8,23 +8,22 @@
         <%= render "description_at_show_film" %>
     </div>  
 
-    <% if signed_in? %>          
-        <div id="div_wrapper_for_form_create_comment">        
+<div id="div_wrapper_for_form_create_comment">  
+    <% if signed_in? %>        
             <%= render "form_for_comment" %>
-        </div>
     <% else %>
         <p>Только зарегистрированные пользователи могут голосовать и оставлять комментарии...</p>
-    <% end %>       
+    <% end %>     
+  </div>  
                
-
-    <% if ( @comments.any? ) %> 
-        <div id="div_wrapper_for_all_comments"> 
-            <%= render "all_comments" %>  
-        </div>
+<div id="div_wrapper_for_all_comments"> 
+    <% if ( @comments.any? ) %>         
+            <%= render "all_comments" %>        
     <% else %>
         <p>Комментариев пока нет...</p>
     <% end %>
-          
+          </div>  
+
 </div>
 
 <!--

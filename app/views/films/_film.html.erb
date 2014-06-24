@@ -1,24 +1,30 @@
-<div class="div_image_at_menu_films">
+<!-- <div class="div_image_at_menu_films"> -->
     <%= image_tag(film.image, class: "image_at_menu_films") %>   
-</div>  
+<!-- </div>  -->
 
-<div class="div_options_at_film">
+<!-- <div class="div_options_at_film"> -->
 
     <div class="div_description_of_film">
-        <div class="div_my_description_of_film">
+        <div class="div_top_of_description_of_film">
             <% film.name_rus[0] = film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву %>  
-            <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>            
-            <p class="p_description_of_film"><b>Режиссер:</b> <%= film.producer %></p>
-            <p class="p_description_of_film"><b>Описание:</b> <%= film.short_description %></p>
+            <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>  
+            <%= (film.name_eng) %>
+            <br />
+            <b>Режиссер:</b> <%= film.producer %>
+            <br />
+            <b>Описание:</b> <%= film.short_description %>
         </div>
-        <%= link_to("Посмотреть на www.kinopoisk.ru", film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
-
+        <%= link_to("Посмотреть на www.kinopoisk.ru", film.link_to_kinopoisk, { class: "a_film_kinopoisk", style: "float: left;" }) %>
+        <div id="div_result_of_vote">
+            <%= image_tag("hend_up.png",   { class: "image_vote" }) %><span class="span_count_vote">(111)</span>
+            <%= image_tag("hend_down.png", { class: "image_vote" }) %><span class="span_count_vote">(333)</span>
+        </div>
     </div>
 
+<!--
     <div class="div_vote">
         <%= image_tag("hend_up.png",   { class: "image_vote" }) %><p class="p_count_vote">(111)</p>
-        <!--<div class="clear"></div>--> 
         <%= image_tag("hend_down.png", { class: "image_vote" }) %><p class="p_count_vote">(333)</p>
     </div>
-    
- </div>
+-->
+ <!-- </div> -->

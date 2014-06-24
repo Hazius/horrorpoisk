@@ -12,8 +12,10 @@ namespace :db do
 					)		
 
 		53.times do |n|
-			name = "Человеческая многоножка #{n+1}"
-			Film.create!(name: name,
+			name_rus = "Человеческая многоножка #{n+1}"
+			name_eng = "People mnogonogka #{n+1}"
+			Film.create!(name_rus: name_rus,
+						 name_eng: name_eng,
 					 	 year: "2009",
 					 	 short_description: Faker::Lorem.sentence(5),
 					 	 full_description: Faker::Lorem.sentence(15),

@@ -7,7 +7,7 @@ class Film < ActiveRecord::Base
 		self.name_eng = name_eng.mb_chars.downcase.to_s
 	end
 
-	validates 	:name,
+	validates 	:name_rus,
 				uniqueness: { case_sensitive: false }
 
 end
