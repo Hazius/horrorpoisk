@@ -1,23 +1,43 @@
-<%= link_to(films_path(year_from: "1960", year_to: "2014")) do %>
- 	<div class="div_bt_show_future_in_cinemas">Скоро в кинотеатрах:</div>
+<%= link_to(search_path(future_in_cinemas: "true")) do %>
+    <div class="div_bt_show_future_in_cinemas">Скоро в кинотеатрах:</div>
 <% end %>
 
+<% @films = Film.where(future_in_cinemas: true) %>
+
+<% @films.each do | film | %>
+
+    <%= link_to film_path(film) do %>
+        <div class="div_element_right_panel">
+            <%= image_tag film.image, class: "img_top_of_element_right_panel" %>
+            <div class="div_bottom_of_element_right_panel">  
+                <b>Режиссер:</b> <%= film.producer %>
+                <br />
+                <b>Описание:</b> <%= film.short_description %>
+            </div>
+        </div>
+    <% end %>
+
+<% end %>
+
+<!--
 <div class="div_element_right_panel">
-	<%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
-	<div class="div_bottom_of_element_right_panel">Описание</div>
+    <%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
+    <div class="div_bottom_of_element_right_panel">Описание</div>
 </div>
 
 <div class="div_element_right_panel">
-	<%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
-	<div class="div_bottom_of_element_right_panel">Описание</div>
+    <%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
+    <div class="div_bottom_of_element_right_panel">Описание</div>
 </div>
 
 <div class="div_element_right_panel">
-	<%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
-	<div class="div_bottom_of_element_right_panel">Описание</div>
+    <%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
+    <div class="div_bottom_of_element_right_panel">Описание</div>
 </div>
 
 <div class="div_element_right_panel">
-	<%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
-	<div class="div_bottom_of_element_right_panel">Описание</div>
+    <%= image_tag "mnogonogka_1.png", class: "img_top_of_element_right_panel" %>
+    <div class="div_bottom_of_element_right_panel">Описание</div>
 </div>
+
+-->

@@ -6,9 +6,13 @@
 
     <div class="div_description_of_film">
         <div class="div_top_of_description_of_film">
-            <% film.name_rus[0] = film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву %>  
+            <%  film.name_rus[0] = film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву
+                film.name_eng[0] = film.name_eng[0].mb_chars.upcase.to_s #капсим первую букву 
+            %>  
             <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>  
-            <%= (film.name_eng) %>
+            <span style="color: #808080; font-size: 15px;"><%= film.name_eng %></span>
+            <br />
+            <b>Премьера в РФ:</b> 20.13.<%= film.year %>
             <br />
             <b>Режиссер:</b> <%= film.producer %>
             <br />

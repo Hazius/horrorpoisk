@@ -1,28 +1,29 @@
 <div id="div_wrapper_show_film">   
 
-    <div id="div_wrapper_for_image_show_film">
-        <%= image_tag(@film.image, id: "image_at_show_film") %>   
-    </div>  
+    <!--<div id="div_wrapper_for_image_show_film">-->
+    <%= image_tag(@film.image, id: "image_at_show_film") %>   
+    <!--</div>-->
 
     <div id="div_wrapper_for_description_show_film">
         <%= render "description_at_show_film" %>
     </div>  
 
-<div id="div_wrapper_for_form_create_comment">  
-    <% if signed_in? %>        
+    <div id="div_wrapper_for_form_create_comment">  
+        <% if signed_in? %>       
+        	<b>Оставить отзыв:</b>
             <%= render "form_for_comment" %>
-    <% else %>
-        <p>Только зарегистрированные пользователи могут голосовать и оставлять комментарии...</p>
-    <% end %>     
-  </div>  
+        <% else %>
+            <p>Только зарегистрированные пользователи могут голосовать и оставлять комментарии...</p>
+        <% end %>     
+    </div>  
                
-<div id="div_wrapper_for_all_comments"> 
-    <% if ( @comments.any? ) %>         
+    <div id="div_wrapper_for_all_comments"> 
+        <% if ( @comments.any? ) %>         
             <%= render "all_comments" %>        
-    <% else %>
-        <p>Комментариев пока нет...</p>
-    <% end %>
-          </div>  
+        <% else %>
+            <p>Комментариев пока нет...</p>
+        <% end %>
+    </div>  
 
 </div>
 

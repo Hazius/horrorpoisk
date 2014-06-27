@@ -1,65 +1,75 @@
 <div id="div_left_of_navigation_top">
-	
-	<ul id="ul_left_of_navigation_top">
-		<li>
-			<%= link_to('#') do %>
-				<div class="div_link_left_of_navigation_top">
-					Предложить фильм
-				</div>
-			<% end %>
-		</li>
-	</ul>
+    
+    <ul id="ul_left_of_navigation_top">
+    
+        <li>
+            <%= link_to(about_us_path) do %>
+                <div class="div_link_left_of_navigation_top">
+                    О нас
+                </div>
+            <% end %>
+        </li>
+    
+        <li>
+            <%= link_to('#') do %>
+                <div class="div_link_left_of_navigation_top">
+                    Предложить фильм
+                </div>
+            <% end %>            
+        </li>
+
+    </ul>
 
 </div>
 
 <div id="div_right_of_navigation_top">
 
-	<ul id="ul_right_of_navigation_top">
+    <ul id="ul_right_of_navigation_top">
 
-		<li>
-			<%= link_to(root_path) do %>
-				<div class="div_link_right_of_navigation_top">Главная</div>
-			<% end %>
-		</li>
+        <li>
+            <%= link_to(root_path) do %>
+                <div class="div_link_right_of_navigation_top">Главная</div>
+            <% end %>
+        </li>
 
-		<% if signed_in?() %>
+        <% if signed_in?() %>
 
-			<% if current_user().admin? %>
-				<li>
-					<%= link_to(admin_index_path()) do %>	
-						<div class="div_link_right_of_navigation_top">Admin</div>	
-					<% end %>
-				</li>
-			<% end %>
+            <% if current_user().admin? %>
+                <li>
+                    <%= link_to(admin_index_path()) do %>   
+                        <div class="div_link_right_of_navigation_top">Admin</div>   
+                    <% end %>
+                </li>
+            <% end %>
 
-			<li>
-				<%= link_to(edit_user_path(current_user())) do %>	
-					<div class="div_link_right_of_navigation_top">Профиль</div>	
-				<% end %>
-			</li>
+            <li>
+                <%= link_to(edit_user_path(current_user())) do %>   
+                    <div class="div_link_right_of_navigation_top">Профиль</div> 
+                <% end %>
+            </li>
 
-			<li>
-				<%= link_to(session_path(current_user()), method: :delete) do %>		
-					<div class="div_link_right_of_navigation_top">Выход</div>		
-				<% end %>
-			</li>
+            <li>
+                <%= link_to(session_path(current_user()), method: :delete) do %>        
+                    <div class="div_link_right_of_navigation_top">Выход</div>       
+                <% end %>
+            </li>
 
-		<% else %>
+        <% else %>
 
-			<li>
-				<%= link_to(new_session_path) do %>		
-					<div class="div_link_right_of_navigation_top">Вход</div>			
-				<% end %>
-			</li>
+            <li>
+                <%= link_to(new_session_path) do %>     
+                    <div class="div_link_right_of_navigation_top">Вход</div>            
+                <% end %>
+            </li>
 
-			<li>
-				<%= link_to(new_user_path) do %>		
-					<div class="div_link_right_of_navigation_top">Регистрация</div>	
-				<% end %>
-			</li>
+            <li>
+                <%= link_to(new_user_path) do %>        
+                    <div class="div_link_right_of_navigation_top">Регистрация</div> 
+                <% end %>
+            </li>
 
-		<% end %>
+        <% end %>
 
-	</ul>
+    </ul>
 
 </div>

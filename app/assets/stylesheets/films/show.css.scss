@@ -15,63 +15,67 @@ $width_screen: 700px;
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
-	outline: 1px solid $gold; 
+    outline: 1px solid $gold; 
 }
 
 //@import "bootstrap";
 
 div#div_wrapper_show_film {
-	//width: $width_screen; //90%;
-	margin: 20px auto 0 auto;	
+    //width: $width_screen; //90%;
+    margin: 20px auto 0 auto;   
 
-	background-color: $white;
-	border-top: 1px solid #c0c0c0;//$black;
-border-right: 1px solid #c0c0c0;//$black;
-	box-shadow: -7px 8px 10px $black;
+    background-color: $white;
+    //border-top: 1px solid #c0c0c0;//$black;
+    //border-right: 1px solid #c0c0c0;//$black;
+    //box-shadow: -7px 8px 10px $black;
 
-	//@include contour_of_bloсk;
+    //@include contour_of_bloсk;
 }
 
 //// КАРТИНКА (НАЧАЛО)
 
 $height_image_at_show_film: 400px;
 
-div#div_wrapper_for_image_show_film {		
-	height: $height_image_at_show_film;
-	float: left;
-
-	//@include contour_of_bloсk;
-}
-
 img#image_at_show_film {
-	height: $height_image_at_show_film;
-	margin: 20px 20px 0 20px;
-	//@include contour_of_bloсk;
+    height: $height_image_at_show_film;
+    margin: 0 20px;
+    float: left;
+
+    background-color: $smoky;
+    padding: 10px;
+    border: 1px solid $black;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    //@include contour_of_bloсk;
 }
 //// КАРТИНКА (КОНЕЦ)
 
 //// ОПИСАНИЕ (НАЧАЛО)
 div#div_wrapper_for_description_show_film {
-	height: $height_image_at_show_film;
-	//@include contour_of_bloсk;
+    margin-right: 20px; 
+    height: $height_image_at_show_film;
+    //@include contour_of_bloсk;
 }
 //// ОПИСАНИЕ (КОНЕЦ)
 
 // Форма создания коммента(начало):
 div#div_wrapper_for_form_create_comment {
 min-height: 10px; 
-	width: 80%;
-	margin: 50px auto 0 auto;
-	//@include contour_of_bloсk;
+    width: 80%;
+    margin: 50px auto 0 auto;
+    //@include contour_of_bloсk;
 }
 // Форма создания коммента(конец):
 
 // Вывод всех комментариев (начало)
 
-div#div_wrapper_for_all_comments {	
-	font-size: 15px;
-	//min-height: 20px;
-	margin: 30px 0;
+div#div_wrapper_for_all_comments {  
+    font-size: 15px;
+    //min-height: 20px;
+    margin: 30px 0;
 padding-bottom: 30px;
 //@include contour_of_bloсk;
 }

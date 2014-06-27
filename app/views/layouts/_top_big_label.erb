@@ -1,32 +1,62 @@
 <div id="div_wrapper_description_of_top_big_label">
-    <%= link_to(films_path(year_from: "1960", year_to: "2014")) do %>
+    <%= link_to(search_path(now_in_cinemas: "true")) do %>
         <div id="div_description_of_top_big_label">Сейчас в кинотеатрах:</div>
     <% end %>    
 </div>
 
+<% @films = Film.where(now_in_cinemas: true) %>
+
 <div id="slider-wrap">
   <div id="slider">
+
+    <% i = 0 %>
+
+    <% @films.each do | film | %>
+
+        <% if(i == 0) %>
+            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block">
+            <% i = 2 %> 
+        <% elsif(i == 1) %>
+            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">
+            <% i = 2 %>  
+        <% end %>
+
+        <% 2.times do %>
+            <%= link_to(image_tag(film.image, class: "img_for_slider_top"), film_path(film)) %>
+        <% end %>    
+
+        <% if(i == 2) %>                
+            </div>
+            <% i = 1 %>   
+        <% end %>            
+
+    <% end %>
+
+<!--
     <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">
-      <%= image_tag "mnogonogka_1.png", class: "img_for_slider_top" %>
-      <%= image_tag "top.png", class: "img_for_slider_top" %>
+        <%= image_tag "mnogonogka_1.png", class: "img_for_slider_top" %>
+        <%= image_tag "top.png", class: "img_for_slider_top" %>
     </div>
+
     <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block">
       <%= image_tag "top.png", class: "img_for_slider_top" %>
       <%= image_tag "mnogonogka_1.png", class: "img_for_slider_top" %>
     </div> 
+-->
+
   </div>
 </div>
 
 <div id="div_search">
-	<%= form_tag( 	search_path(), 
-					{ method: "get" } ) do %>	
-		
-					
-		<%= text_field_tag :name_film_at_search, nil, id: "field_input_of_search" %>
-		
-	
-		<%= submit_tag "", id: "submit_of_search" %>	
+    <%= form_tag(   search_path(), 
+                    { method: "get" } ) do %>   
+        
+                    
+        <%= text_field_tag :name_film_at_search, nil, id: "field_input_of_search" %>
+        
+    
+        <%= submit_tag "", id: "submit_of_search" %>    
 
 
-	<% end %>
-</div>	
+    <% end %>
+</div>  

@@ -1,6 +1,9 @@
 <p>
-	<% @film.name_rus[0] = @film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву %>
-    <b><%= @film.name_rus %></b>      
+    <% @film.name_rus[0] = @film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву %>
+    <% @film.name_eng[0] = @film.name_eng[0].mb_chars.upcase.to_s #капсим первую букву %>
+    <b><%= @film.name_rus %></b>
+    <br />
+    <span style="color: #808080;"><%= @film.name_eng %></span>       
 </p>
 
 <p>
@@ -18,5 +21,5 @@
 </p>
 
 <p>     
-    <%= link_to("Посмотреть на www.kinopoisk.ru", @film.link_to_kinopoisk, { class: "a_film_kinopoisk" }) %>
+    <%= link_to("Посмотреть на www.kinopoisk.ru", @film.link_to_kinopoisk ) %>
 </p>

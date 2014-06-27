@@ -6,14 +6,14 @@ $smoky: #F5F5F5;
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
-    outline: 1px solid $white; 
+    outline: 1px solid $gold; 
 }
 
 //////////////////////
 // ЛЕВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
-$width_left_link: 300px;
+$width_left_link: 250px;
 
 div#div_left_of_navigation_top {
     width: 50%;
@@ -26,7 +26,7 @@ div#div_left_of_navigation_top {
 
 ul#ul_left_of_navigation_top {
     height: 100%;   
-    width: $width_left_link*1;
+    width: $width_left_link*2 + 10px;
     padding: 0;
     margin: 0 auto;
 }
@@ -40,7 +40,7 @@ div.div_link_left_of_navigation_top {
 // ПРАВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
-$width_right_link: 130px;
+$width_right_link: 150px;
 
 div#div_right_of_navigation_top {
     width: 50%;
@@ -51,9 +51,9 @@ div#div_right_of_navigation_top {
 
 ul#ul_right_of_navigation_top {
     height: 100%;   
-    //width: $width_right_link*4;
+    width: $width_right_link*4 + 10px;
     padding: 0;
-    margin: 0;//0 auto;
+    margin: 0 auto;
     //@include contour_of_bloсk;
 }
 
@@ -81,7 +81,8 @@ div.div_link_right_of_navigation_top, div.div_link_left_of_navigation_top {
     color: $black;
     margin: 0;
     border-radius: 10px 10px 0 0;
-
+    border: 1px dotted $black;
+    //background-color: $smoky;
     //@include contour_of_bloсk;
 
     -webkit-transition: background 1s ease;

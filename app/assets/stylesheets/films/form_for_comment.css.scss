@@ -10,44 +10,50 @@ $green_pale: #98FB98; //бледный
 $red_pale: #FF6347;
 
 textarea#text_area_for_comment {
-	margin: 0;	
-	padding: 0;
-	width: 100%;
-	height: 200px;	
-	//@include contour_of_bloсk;
-}
-div.div_submit_for_comment {	
-	width: 50%;
-	height: 50px;
+    margin: 0;  
+    padding: 0;
+    width: 100%;
+    height: 200px;  
+    //@include contour_of_bloсk;
 
-	//@include contour_of_bloсk;	
+    &:focus, &:hover {
+    	outline: 1px solid #50009c;
+    }
+}
+div.div_submit_for_comment {    
+    //width: 33%;
+    //height: 50px;
+    //margin: 0; 
+    //@include contour_of_bloсk;    
 }
 
 input.submit_for_comment {
-	margin: 0;	
-	width: 100%;
-	height: 100%;
-	border: 3px solid $black;
-	color: $white;
-	font-size: 14pt;
-
-	&:hover {
-		cursor: pointer;
-	}
+    margin: 0;  
+    width: 50%;
+    height: 50px;
+    //width: 100%;
+    //height: 100%;
+    //border: 3px solid $black;
+    color: $white;
+    font-size: 14pt;
+    outline: none;
+    &:hover {
+        cursor: pointer;
+    }
 
 }
 input#submit_up_for_comment {
-	background-color: $green_dark;	
-	&:hover {
-		background-color: $green_pale; //$green;		
-		color: $black;
-	}
+    background-color: $green_dark;  
+    &:hover {
+        background-color: $green_pale; //$green;        
+        color: $black;
+    }
 }
 input#submit_down_for_comment {
-	background-color: $red_dark;	
+    background-color: $red_dark;    
 
-	&:hover {
-		background-color: $red_pale; //$red;		
-		//color: $black;
-	}
+    &:hover {
+        background-color: $red_pale; //$red;        
+        //color: $black;
+    }
 }

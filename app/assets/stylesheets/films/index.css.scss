@@ -51,6 +51,15 @@ img.image_at_menu_films {
     float: left;
     height: $height_blok;
     margin: 0;
+
+    &:hover{
+        -webkit-transition: all 0.5s ease;
+        height: $height_blok*3;
+        padding: 10px;
+        background-color: $smoky;
+        position: absolute;
+        border: 1px solid $black;
+    }
 }
 
 
@@ -111,6 +120,7 @@ div.div_description_of_film {
 
 div.div_top_of_description_of_film {    
     height: $height_blok - 40px; //80%;
+    width: 90%;
     font-size: 12px;
     line-height: 1.3;
     border-bottom: 1px solid $silver;

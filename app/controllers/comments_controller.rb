@@ -24,13 +24,16 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+
     @comment = Comment.new(comment_params)
-    
-      if @comment.save
-        redirect_to @comment, notice: 'Comment was successfully created.'        
-      else
-        render action: 'new'        
-      end
+    if params[:commit] == "Положительный"
+      @comment.liked = "true"
+    elsif params[:commit] == "Отрицательный"
+      @comment.liked = "false"
+    end
+    @comment.save
+    #redirect_to @comment, notice: 'Comment was successfully created.'
+    redirect_to film_path(@comment.film) 
   
   end
 

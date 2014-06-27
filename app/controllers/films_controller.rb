@@ -4,8 +4,16 @@ class FilmsController < ApplicationController
 
   def search
 
-    name = params[:name_film_at_search].mb_chars.downcase.to_s
-    @films = Film.where("name_rus like ?", "%#{name}%")
+    if !params[:name_film_at_search].nil?
+        name = params[:name_film_at_search].mb_chars.downcase.to_s
+        films_rus = Film.where("name_rus like ?", "%#{name}%")
+        films_eng = Film.where("name_eng like ?", "%#{name}%")
+        @films = films_rus + films_eng
+    elsif !params[:future_in_cinemas].nil? && params[:future_in_cinemas]
+        @films = Film.where(future_in_cinemas: true)
+    elsif !params[:now_in_cinemas].nil? && params[:now_in_cinemas]
+        @films = Film.where(now_in_cinemas: true)  
+    end
 
     render 'index'
   end
@@ -41,7 +49,7 @@ class FilmsController < ApplicationController
     @film = Film.new(film_params)
    
     if @film.save
-      	redirect_to @film, notice: 'Film was successfully created.'      
+        redirect_to @film, notice: 'Film was successfully created.'      
     else
         render action: 'new'     
     end
@@ -76,6 +84,9 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:name_rus, :name_eng, :producer, :year, :short_description, :full_description, :link_to_kinopoisk, :image)
+      params.require(:film).permit(:name_rus, :name_eng, :producer, 
+                                    :year, :short_description, :full_description, 
+                                    :link_to_kinopoisk, :image, :now_in_cinemas,
+                                    :future_in_cinemas)
     end
 end
