@@ -8,7 +8,7 @@
 
     <%= link_to film_path(film) do %>
         <div class="div_element_right_panel">
-            <%= image_tag film.image, class: "img_top_of_element_right_panel" %>
+            <%= image_tag "films/#{film.image}.jpg", class: "img_top_of_element_right_panel" %>
             <div class="div_bottom_of_element_right_panel">  
                 <b>Режиссер:</b> <%= film.producer %>
                 <br />

@@ -1,5 +1,5 @@
 <!-- <div class="div_image_at_menu_films"> -->
-    <%= image_tag(film.image, class: "image_at_menu_films") %>   
+    <%= image_tag("films/#{film.image}.jpg", class: "image_at_menu_films") %>   
 <!-- </div>  -->
 
 <!-- <div class="div_options_at_film"> -->
@@ -12,7 +12,7 @@
             <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>  
             <span style="color: #808080; font-size: 15px;"><%= film.name_eng %></span>
             <br />
-            <b>Премьера в РФ:</b> 20.13.<%= film.year %>
+            <b>Премьера в РФ:</b> <%= film.russian_premiere %>
             <br />
             <b>Режиссер:</b> <%= film.producer %>
             <br />

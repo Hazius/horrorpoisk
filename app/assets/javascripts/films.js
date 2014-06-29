@@ -1,7 +1,7 @@
 // События для действий с картинкой:
 $(document).ready(function() 
 {
-	var image_height_default = $("#image_at_show_film").css("height").toString();
+	var image_height_default = $("#image_at_show_film").css("height");
 	$("#image_at_show_film").click(function(){
 		if ($(this).css("position") != "fixed")
 		{

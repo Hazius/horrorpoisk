@@ -10,7 +10,7 @@ $green_pale: #98FB98; //бледный
 $red_pale: #FF6347;
 $silver: #c0c0c0;
 
-$height_blok: 150px;
+$height_blok: 200px;//150px;
 $width_screen: 700px;
 
 //отключаемый контур блоков:
@@ -54,11 +54,11 @@ img.image_at_menu_films {
 
     &:hover{
         -webkit-transition: all 0.5s ease;
-        height: $height_blok*3;
-        padding: 10px;
-        background-color: $smoky;
+        height: 80%;//$height_blok*3;
+        //padding: 10px;
+        //background-color: $smoky;
         position: absolute;
-        border: 1px solid $black;
+        border: 1px solid $smoky;
     }
 }
 

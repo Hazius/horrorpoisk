@@ -13,7 +13,7 @@ $smoky: #F5F5F5;
 // ЛЕВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
-$width_left_link: 250px;
+$width_left_link: 200px;//250px;
 
 div#div_left_of_navigation_top {
     width: 50%;
@@ -40,7 +40,7 @@ div.div_link_left_of_navigation_top {
 // ПРАВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
-$width_right_link: 150px;
+$width_right_link: 120px;//150px;
 
 div#div_right_of_navigation_top {
     width: 50%;
@@ -76,12 +76,12 @@ div.div_link_right_of_navigation_top, div.div_link_left_of_navigation_top {
     height: 100%;       
     float: left;
     text-align: center;
-    font-size: 20px;
-    line-height: 2.5;
+    font-size: 15px;//20px;
+    line-height: 2;//2.5;
     color: $black;
     margin: 0;
     border-radius: 10px 10px 0 0;
-    border: 1px dotted $black;
+    //border: 1px dotted $black;
     //background-color: $smoky;
     //@include contour_of_bloсk;
 

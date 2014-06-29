@@ -14,23 +14,26 @@
     <% @films.each do | film | %>
 
         <% if(i == 0) %>
-            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block">
-            <% i = 2 %> 
+            <!-- <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block"> -->
+            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: block">            
         <% elsif(i == 1) %>
-            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">
-            <% i = 2 %>  
+            <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">            
         <% end %>
-
-        <% 2.times do %>
-            <%= link_to(image_tag(film.image, class: "img_for_slider_top"), film_path(film)) %>
-        <% end %>    
-
-        <% if(i == 2) %>                
+        
+        <%= link_to(image_tag("films/#{film.image}.jpg", class: "img_for_slider_top"), film_path(film)) %>
+         
+        <% if(i == 2) %> 
             </div>
-            <% i = 1 %>   
+            <% i = 1 %>
+        <% else %>               
+            <% i = 2 %>
         <% end %>            
 
     <% end %>
+
+    <% if(i == 2) %> 
+        </div>
+    <% end %> 
 
 <!--
     <div class="slide" style="position: absolute; top: 0px; left: 0px; display: none">

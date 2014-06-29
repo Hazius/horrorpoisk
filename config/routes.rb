@@ -1,5 +1,7 @@
 Scary::Application.routes.draw do
 
+  resources :settings
+
   get "admin/index"
   resources :comments
 

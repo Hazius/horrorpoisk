@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
-  before_action :set_film, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_film, only: [:show, :edit, :update, :destroy]
 
   def search
 
@@ -46,12 +46,13 @@ class FilmsController < ApplicationController
   # POST /films
   # POST /films.json
   def create
-    @film = Film.new(film_params)
-   
-    if @film.save
-        redirect_to @film, notice: 'Film was successfully created.'      
-    else
-        render action: 'new'     
+    @film = Film.new(film_params) 
+    if @film.save 
+        @film.image = @film.id 
+        @film.save 
+        redirect_to @film, notice: 'Film was successfully created.' 
+    else 
+        render action: 'new' 
     end
   
   end
@@ -85,8 +86,8 @@ class FilmsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
       params.require(:film).permit(:name_rus, :name_eng, :producer, 
-                                    :year, :short_description, :full_description, 
-                                    :link_to_kinopoisk, :image, :now_in_cinemas,
-                                    :future_in_cinemas)
+                                    :year, :russian_premiere, :short_description, 
+                                    :full_description, :link_to_kinopoisk, :image, 
+                                    :now_in_cinemas, :future_in_cinemas)
     end
 end
