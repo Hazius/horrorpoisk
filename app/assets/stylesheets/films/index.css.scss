@@ -10,7 +10,7 @@ $green_pale: #98FB98; //бледный
 $red_pale: #FF6347;
 $silver: #c0c0c0;
 
-$height_blok: 200px;//150px;
+$height_blok: 150px;//150px;
 $width_screen: 700px;
 
 //отключаемый контур блоков:
@@ -40,7 +40,7 @@ li.li_menu_films {
     //border-radius: 0 10px 10px 0;
     //box-shadow: 0 0 30px $black;
     box-shadow: -7px 8px 10px $black;
-
+    //position: relative;
     //@include contour_of_bloсk;
 }
 
@@ -54,9 +54,9 @@ img.image_at_menu_films {
 
     &:hover{
         -webkit-transition: all 0.5s ease;
-        height: 80%;//$height_blok*3;
+        height: 70%;//$height_blok*3;
         //padding: 10px;
-        //background-color: $smoky;
+        //background-color: $smoky;  
         position: absolute;
         border: 1px solid $smoky;
     }
@@ -119,15 +119,31 @@ div.div_description_of_film {
 }
 
 div.div_top_of_description_of_film {    
-    height: $height_blok - 40px; //80%;
-    width: 90%;
+    height: $height_blok - 39px; //80%;
+    width: $width_screen - $height_blok - 10px; //90%;
     font-size: 12px;
     line-height: 1.3;
-    border-bottom: 1px solid $silver;
+    border-bottom: 1px solid $silver;    
+    overflow: hidden;
     //margin: 3px 0;
-    //@include contour_of_bloсk;
+    //@include contour_of_bloсk;    
+    &:hover {
+        -webkit-transition: all 0.2s ease;   
+        border: 3px solid $silver;//$black;
+        border-radius: 10px;
+        //z-index: 999;
+        overflow: auto;
+        position: absolute;
+        cursor: default;
+        height: 2*$height_blok;
+        width: $width_screen - $height_blok + 20px;
+        background-color: $white;
+    }
 }
 
+span.div_full_description_of_film {  
+    //@include contour_of_bloсk;  
+}
 
 //Блок с результатами голосования
 // (начало)

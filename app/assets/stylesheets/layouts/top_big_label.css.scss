@@ -9,6 +9,22 @@ $smoky: #F5F5F5;
     outline: 3px solid $gold; 
 }
 
+//////////////////////////////
+// БОЛЬШОЙ БЛОК СВЕРХУ ПОД ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКОЙ
+//////////////////////////////
+div#div_wrapper_top_big_label {
+    //width: 100%;
+    min-height: 400px;
+    position: relative;
+    background-color: $black; //#171717;
+    //background: url(image_path("top.png")) no-repeat;
+    //background-size: cover;
+    border-bottom: 50px solid $black; //#171717;
+    border-left: 50px solid $black; //#171717;
+    border-right: 50px solid $black; //#171717;
+    //@include contour_of_bloсk;
+}
+
 div#div_wrapper_description_of_top_big_label{
     width: 100%;
     height: 50px;
@@ -17,19 +33,20 @@ div#div_wrapper_description_of_top_big_label{
 
 div#div_description_of_top_big_label{
     height: 100%;
-    width: 250px;  
+    width: 300px;  
     margin: 0 auto;
-    color: $smoky; 
+    color: #7E7E7E;//$smoky; 
     font-size: 20px;
     line-height: 2.2;
     text-align: center;
+    font-weight: 600;
     //border-radius: 0 0 10px 10px;
     //@include contour_of_bloсk;
 
-    -webkit-transition: background 1s ease;
+    -webkit-transition: all 0.5s ease;
     &:hover {
         //background-color: $smoky;
-        color: $gold;
+        color: $white;//$gold;        
         cursor: pointer;
     }
 }
@@ -45,9 +62,9 @@ div#div_search {
     margin: 0 auto;
     //@include contour_of_bloсk;
 
-    -webkit-transition: all 1s ease;
+    //-webkit-transition: all 1s ease;
     &:hover {
-        opacity: 1;
+        //opacity: 1;
         //background-color: $smoky;
         //border-top: 5px solid $black;   
         //border-bottom: 30px solid $smoky;
@@ -68,12 +85,12 @@ input#field_input_of_search {
 
     //@include contour_of_bloсk;
 
-    -webkit-transition: all 1s ease;
+    //-webkit-transition: all 1s ease;
 
     &:hover {
         //border: $border_width solid #191970;
         //box-shadow: 0 0 10px $black;//#191970;
-        width: 760px;
+        //width: 760px;
     }
 
     &:focus {
@@ -107,7 +124,7 @@ img.img_for_slider_top {
 
     &:hover {
         cursor: pointer;
-        opacity: 0.9;
+        opacity: 0.8;
     }
 }
 

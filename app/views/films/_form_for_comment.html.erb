@@ -1,6 +1,6 @@
 <%= form_for(@comment) do |f| %>                
     
-    <%= f.text_area :text, id: "text_area_for_comment" %>                
+    <%= f.text_area :text, id: "text_area_for_comment", placeholder: "Отзыв появится после проверки модератором." %>               
 
     <%= f.hidden_field :user_id, value: current_user().id %>
     <%= f.hidden_field :film_id %>

@@ -5,10 +5,7 @@
 <!-- <div class="div_options_at_film"> -->
 
     <div class="div_description_of_film">
-        <div class="div_top_of_description_of_film">
-            <%  film.name_rus[0] = film.name_rus[0].mb_chars.upcase.to_s #капсим первую букву
-                film.name_eng[0] = film.name_eng[0].mb_chars.upcase.to_s #капсим первую букву 
-            %>  
+        <div class="div_top_of_description_of_film">             
             <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>  
             <span style="color: #808080; font-size: 15px;"><%= film.name_eng %></span>
             <br />
@@ -16,12 +13,20 @@
             <br />
             <b>Режиссер:</b> <%= film.producer %>
             <br />
-            <b>Описание:</b> <%= film.short_description %>
+            <span class="div_full_description_of_film">
+                <b>Описание:</b> <%= film.full_description %>
+            </span>
         </div>
         <%= link_to("Посмотреть на www.kinopoisk.ru", film.link_to_kinopoisk, { class: "a_film_kinopoisk", style: "float: left;" }) %>
         <div id="div_result_of_vote">
-            <%= image_tag("hend_up.png",   { class: "image_vote" }) %><span class="span_count_vote">(111)</span>
-            <%= image_tag("hend_down.png", { class: "image_vote" }) %><span class="span_count_vote">(333)</span>
+            <%= image_tag("hend_up.png",   { class: "image_vote" }) %>
+            <span class="span_count_vote">
+                <%= Comment.get_positive(film.comments.all()) %>
+            </span>
+            <%= image_tag("hend_down.png", { class: "image_vote" }) %>
+            <span class="span_count_vote">
+                <%= Comment.get_negative(film.comments.all()) %>
+            </span>
         </div>
     </div>
 

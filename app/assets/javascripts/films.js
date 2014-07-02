@@ -23,6 +23,7 @@ $(document).ready(function()
 });
 
 // События для формы ввода комментариев:
+/*
 var message = "Отзыв появится после проверки модератором.";
 var name_text_area = "#text_area_for_comment";
 $(document).ready(function() 
@@ -54,3 +55,4 @@ $(document).ready(function()
     });
     
 });
+*/

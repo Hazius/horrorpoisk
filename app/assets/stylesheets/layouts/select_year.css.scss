@@ -6,15 +6,37 @@ $smoky: #F5F5F5;
 $gray: #808080;
 $gold: #FAA21A;
 
+$width_div_select_year: 120px; //150px;
+
 //отключаемый контур блоков:
 @mixin contour_of_bloсk
 {
     outline: 3px solid $gold; 
 }
 
+//////////////////////////////
+// ПАНЕЛЬКА ВЫБОРА ДИАПАЗОНА ГОДОВ ДЛЯ ФИЛЬМОВ
+//////////////////////////////
+div#div_wrapper_select_year {
+    height: 40px;//50px;
+    width: 100%;
+    background-color: $smoky; //#F0F0F0
+    border-bottom: 50px solid $smoky; //#F0F0F0
+    //@include contour_of_bloсk;
+}
+div#div_wrapper_select_year a {
+    color: #7E7E7E;
+    &:hover {
+        color: #7E7E7E;   
+    }
+    &:visited {
+        color: #7E7E7E;
+    }
+}
+
 ul#ul_select_year {
     margin: 0 auto;
-    width: 900px + 15px;
+    width: $width_div_select_year*6 + 15px;
     height: 100%;   
     padding: 0;
 
@@ -28,15 +50,17 @@ ul#ul_select_year  li {
 
 div.div_select_year {
     height: 100%;
-    width: 150px;
+    width: $width_div_select_year;
     float: left;
     text-align: center;
-    font-size: 20px;
-    line-height: 2.5;       
+    font-size: 17px;//20px;
+    line-height: 2;//2.5;       
     //color: $black;
     margin: 0;  
     border-radius: 0 0 10px 10px;
     border: 1px dotted $black;
+    border-top: 0;
+
     //@include contour_of_bloсk;
 
     -webkit-transition: background 1s ease;
