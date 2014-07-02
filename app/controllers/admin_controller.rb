@@ -14,16 +14,16 @@ class AdminController < ApplicationController
   	def show_file
   		@file_path = params[:file_path]
   		
-      if (File.exist?(@file_path))
-        file = File.open(@file_path)
-  		  @file_content = file.read()
-  		  file.close()
-        flash.now[:notice] = "Файл открыт"
-      else
-        file = File.new(@file_path, "w")
-        @file_content = ""
-        flash.now[:notice] = "Файл создан"
-      end
+        if (File.exist?(@file_path))
+            file = File.open(@file_path)
+  		    @file_content = file.read()
+  		    file.close()
+            flash.now[:notice] = "Файл открыт"
+        else
+            file = File.new(@file_path, "w")
+            @file_content = ""
+            flash.now[:notice] = "Файл создан"
+        end
 
   		render "edit_file"
   	end
