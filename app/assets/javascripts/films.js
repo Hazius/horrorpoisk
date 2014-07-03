@@ -22,6 +22,30 @@ $(document).ready(function()
 	});
 });
 
+// События для отображения полной информации в списке фильмов:
+$(document).ready(function() 
+{
+  var lv_white = "#FFFFFF";
+  var default_height = $(".div_top_of_description_of_film").css("height");
+
+  $("div.div_top_of_description_of_film").click(function () {
+      $(this).css("background-color", lv_white);
+      $(this).css("position", "absolute");
+      $(this).css("overflow", "auto");
+      $(this).stop(true).animate({ height: "300px" 
+                      }, 300);
+    });
+  $("div.div_top_of_description_of_film").hover(
+    function () { },
+    function () { 
+      $(this).stop(true)
+             .css("background-color", "transparent")
+             .css("position", "static")
+             .css("overflow", "hidden")
+             .css("height", default_height);
+    });
+});
+
 // События для формы ввода комментариев:
 /*
 var message = "Отзыв появится после проверки модератором.";

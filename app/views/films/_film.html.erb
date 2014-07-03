@@ -5,7 +5,10 @@
 <!-- <div class="div_options_at_film"> -->
 
     <div class="div_description_of_film">
-        <div class="div_top_of_description_of_film">             
+        <div class="div_top_of_description_of_film">
+            <% if signed_in?() && current_user().admin? %>
+                (id: <%= film.id %>)
+            <% end %>           
             <%= link_to("#{film.name_rus} (#{film.year})", film_path(film), { class: "a_film_name" }) %>  
             <span style="color: #808080; font-size: 15px;"><%= film.name_eng %></span>
             <br />

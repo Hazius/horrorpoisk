@@ -14,8 +14,8 @@ $smoky: #F5F5F5;
 //////////////////////////////
 div#div_wrapper_top_navigation {
     width: 100%;
-    height: 30px;//50px;     
-    background-color: #E6E6FA;
+    height: 50px;//50px;     
+    background-color: F5F5F5;//#FFF8F0;//#E6E6FA;
 
     //@include contour_of_bloсk;
 }
@@ -51,7 +51,7 @@ div.div_link_left_of_navigation_top {
 // ПРАВАЯ СТОРОНА ВЕРХНЕЙ НАВИГАЦИОННОЙ ПАНЕЛЬКИ
 //////////////////////
 
-$width_right_link: 120px;//150px;
+$width_right_link: 150px;//150px;
 
 div#div_right_of_navigation_top {
     width: 50%;
@@ -88,19 +88,19 @@ div.div_link_right_of_navigation_top, div.div_link_left_of_navigation_top {
     float: left;
     text-align: center;
     font-size: 20px;//20px;
-    line-height: 1.5;//2.5;
+    line-height: 2.3;//2.5;
     color: #9e9eaa;//#7E7E7E;
     margin: 0;
-    border-radius: 10px 10px 0 0;
+    //border-radius: 10px 10px 0 0;
     //border: 1px dotted $black;
-    //background-color: $smoky;
+    //background-color: #cccccc;
     //@include contour_of_bloсk;
     //font-weight: 600;
 
-    -webkit-transition: all 0.2s ease;
+    -webkit-transition: all 0.5s ease;
     &:hover {
-        //background-color: $black;
-        color: #5e5e66;//$black;//$white;//$smoky;
+        background-color: #dbdbdb;
+        color: $black;//#5e5e66;//$black;//$white;//$smoky;
         //font-size: 17px;        
         //line-height: 1.7;
     }

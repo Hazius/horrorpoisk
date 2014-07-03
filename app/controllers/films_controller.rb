@@ -31,7 +31,7 @@ class FilmsController < ApplicationController
     # GET /films/1
     # GET /films/1.json
     def show
-        @comments = @film.comments.all()
+        @comments = Comment.delete_moderating(@film.comments.all())
         @comment = @film.comments.new    
     end
 

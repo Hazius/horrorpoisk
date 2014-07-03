@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
 
 	def Comment.get_positive(comments)
 		number = 0
+		delete_moderating(comments)
 		if comments.any?
 			comments.each { |comment| number = number + 1 if comment.liked? }			
 		end
@@ -13,10 +14,15 @@ class Comment < ActiveRecord::Base
 
 	def Comment.get_negative(comments)
 		number = 0
+		delete_moderating(comments)
 		if comments.any?
 			comments.each { |comment| number = number + 1 unless comment.liked? }
 		end		
 		return number
+	end
+
+	def Comment.delete_moderating(comments)
+		comments.delete_if { |comment| comment.moderating }
 	end
 
 end

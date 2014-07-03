@@ -59,6 +59,18 @@ div#div_wrapper_for_description_show_film {
     height: $height_image_at_show_film;
     //@include contour_of_bloсk;
 }
+
+a.a_kinopoisk_at_show_film {
+    font-size: 15px;
+    color: $black;
+    background-color: transparent;
+    text-decoration: underline;
+    &:hover {
+        color: $black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+}
 //// ОПИСАНИЕ (КОНЕЦ)
 
 // Форма создания коммента(начало):

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
       if @user.save
         sign_in @user
-        redirect_to @user, notice: 'User was successfully created.'
+        redirect_to root_path, notice: 'Добро пожаловать!'
       else
         render action: 'new'      
       end

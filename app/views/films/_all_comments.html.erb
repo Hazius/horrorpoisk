@@ -1,26 +1,27 @@
-<% @comments.each do |comment| %>    
+<% @comments.each do |comment| %>           
+    
+        <% if comment.liked %>
+            <% vote = "up" %>
+        <% else %>
+            <% vote = "down" %>
+        <% end %> 
 
-    <% if comment.liked %>
-        <% vote = "up" %>
-    <% else %>
-        <% vote = "down" %>
-    <% end %> 
-
-    <div class="div_comment_for_film div_comment_for_film_<%= vote %>">
-        <div class="div_image_for_comment">
-            <%= image_tag("hend_#{vote}.png", class: "image_for_comment") %> 
+        <div class="div_comment_for_film div_comment_for_film_<%= vote %>">
+            <div class="div_image_for_comment">
+                <%= image_tag("hend_#{vote}.png", class: "image_for_comment") %> 
+            </div>       
+            <div class="div_text_of_comment">
+                <% if signed_in?() && current_user().admin? %>
+                    (id: <%= comment.id %>)
+                <% end %>
+                <span class="text_of_comment"><%= comment.text %></span>
+            </div>
+            <div class="div_info_of_comment">
+                <span class="autor_of_comment">Автор: <%= comment.user.name %></span>
+                <span class="date_create_comment">Создано: <%= comment.created_at.strftime("%d.%m.%y") %></span>            
+            </div>
         </div>       
-        <div class="div_text_of_comment">     
-            <span class="text_of_comment"><%= comment.text %></span>
-        </div>
-        <div class="div_info_of_comment">
-            <span class="autor_of_comment">Автор: <%= comment.user.name %></span>
-            <span class="date_create_comment">Создано: <%= comment.created_at.strftime("%d.%m.%y") %></span>
-        </div>
-    </div>    
-        
                           
-                          
-    <!--<div class="clear"></div>-->
+        <!--<div class="clear"></div>-->
 
 <% end %>

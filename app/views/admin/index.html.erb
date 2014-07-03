@@ -2,6 +2,13 @@
 <h1>Зона администратора</h1>
 
 <ul>
-	<li><%= link_to("Редатор исходных файлов проекта", admin_edit_file_path) %></li>
-	<li><%= link_to 'Создать фильм', new_film_path %></li>
+    <li><%= link_to("Редактор исходных файлов проекта", admin_edit_file_path) %></li>
+    <li><%= link_to 'Создать фильм', new_film_path %></li>
+    <li>
+        <%= form_tag(edit_film_2_path, method: :get) do %>            
+            <%= number_field_tag :id, 1 %>
+            <%= submit_tag "Редактировать фильм" %>
+        <% end %>     
+    </li>
+    <li><%= link_to 'Модерация комментариев', comments_path(moderating: "true") %></li>
 </ul>

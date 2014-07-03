@@ -1,21 +1,22 @@
 Scary::Application.routes.draw do
 
-  get "admin/index"
-  resources :comments
+    get "admin/index"
+    resources :comments
 
-  resources :users
-  resources :films
-  resources :sessions, only: [:new, :create, :destroy]
+    resources :users
+    resources :films
+    resources :sessions, only: [:new, :create, :destroy]
 
-	root 'welcome#index'
+    root 'welcome#index'
 
-  match "search", to: "films#search", via: "get"
-match "about_us", to: "welcome#about_us", via: "get"  
+    match "edit_film_2", to: "films#edit", via: "get"
+    match "search", to: "films#search", via: "get"
+    match "about_us", to: "welcome#about_us", via: "get"  
 
-  match "admin/index", to: "admin#index", via: "get"
-  match "admin/edit_file", to: "admin#edit_file", via: "get"
-  match "admin/show_file", to: "admin#show_file", via: "post"
-  match "admin/save_file", to: "admin#save_file", via: "post"
+    match "admin/index", to: "admin#index", via: "get"
+    match "admin/edit_file", to: "admin#edit_file", via: "get"
+    match "admin/show_file", to: "admin#show_file", via: "post"
+    match "admin/save_file", to: "admin#save_file", via: "post"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
