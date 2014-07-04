@@ -56,8 +56,8 @@ img#image_at_show_film {
 //// ОПИСАНИЕ (НАЧАЛО)
 div#div_wrapper_for_description_show_film {
     margin-right: 20px; 
-    height: $height_image_at_show_film;
-    //@include contour_of_bloсk;
+    min-height: $height_image_at_show_film;
+    @include contour_of_bloсk;
 }
 
 a.a_kinopoisk_at_show_film {
