@@ -1,6 +1,7 @@
 class FilmsController < ApplicationController
 
     before_action :set_film, only: [:show, :edit, :update, :destroy]
+    rescue_from ActiveRecord::RecordNotFound, with: :invalid_film
 
     def search
 
@@ -93,4 +94,8 @@ class FilmsController < ApplicationController
                                         :now_in_cinemas, :future_in_cinemas)
         end
         
+        def invalid_film
+        	redirect_to root_path, notice: "Ошибка поиска фильма"
+        end
+
 end
