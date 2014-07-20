@@ -24,7 +24,7 @@ div.label_for_field_input {
 	font-size: 30pt;
 	color: $black;
 	float: left;
-	width: 180px;
+	width: 230px;
 }
 
 // инпут поле
@@ -38,6 +38,16 @@ input.field_input {
 	&:focus {
 		outline: none;
 	}
+}
+
+.color_red {
+	color: #FF0000;
+	font-size: 16px;
+}
+
+.required:after {
+    content: " *";
+    color: red;
 }
 
 // Кнопочка

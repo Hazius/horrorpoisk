@@ -2,6 +2,7 @@
 
   <%= form_for(@user) do |f| %>
   
+  <!--
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,25 +14,38 @@
         </ul>
       </div>
     <% end %>
+  -->
 
-    <div class="for_field_input">
-      <div class="label_for_field_input">Имя:</div>
-      <%= f.text_field :name, class: "field_input" %>
+    <div class="for_field_input">      
+      <div class="label_for_field_input required">Имя:</div>
+      <span class="color_red">
+        <%= @user.errors[:name].each {|msg| msg} if @user.errors[:name].any? %>
+      </span>
+      <%= f.text_field :name, class: "field_input required" %>      
     </div>
   
     <div class="for_field_input">
-      <div class="label_for_field_input">Email:</div>
-      <%= f.text_field :email, class: "field_input" %>
+      <div class="label_for_field_input required">Email:</div>
+      <span class="color_red">
+        <%= @user.errors[:email].each {|msg| msg} if @user.errors[:email].any? %>
+      </span>
+      <%= f.text_field :email, class: "field_input" %>      
     </div>
 
     <div class="for_field_input">
-      <div class="label_for_field_input">Пароль:</div>
-      <%= f.password_field :password, class: "field_input" %>
+      <div class="label_for_field_input required">Пароль:</div>
+      <span class="color_red">
+        <%= @user.errors[:password].each {|msg| msg} if @user.errors[:password].any? %>
+      </span>
+      <%= f.password_field :password, class: "field_input required" %>      
     </div>
 
     <div class="for_field_input">
-      <div class="label_for_field_input">Повтор:</div>
-      <%= f.password_field :password_confirmation, class: "field_input" %>
+      <div class="label_for_field_input required">Повтор:</div>
+      <span class="color_red">
+        <%= @user.errors[:password_confirmation].each {|msg| msg} if @user.errors[:password_confirmation].any? %>
+      </span>
+      <%= f.password_field :password_confirmation, class: "field_input required" %>      
     </div>
 
     <%= f.submit "Принять", class: "submit" %>
