@@ -21,7 +21,7 @@
       <span class="color_red">
         <%= @user.errors[:name].each {|msg| msg} if @user.errors[:name].any? %>
       </span>
-      <%= f.text_field :name, class: "field_input required" %>      
+      <%= f.text_field :name, class: "field_input" %>      
     </div>
   
     <div class="for_field_input">
@@ -37,7 +37,7 @@
       <span class="color_red">
         <%= @user.errors[:password].each {|msg| msg} if @user.errors[:password].any? %>
       </span>
-      <%= f.password_field :password, class: "field_input required" %>      
+      <%= f.password_field :password, class: "field_input" %>      
     </div>
 
     <div class="for_field_input">
@@ -45,7 +45,7 @@
       <span class="color_red">
         <%= @user.errors[:password_confirmation].each {|msg| msg} if @user.errors[:password_confirmation].any? %>
       </span>
-      <%= f.password_field :password_confirmation, class: "field_input required" %>      
+      <%= f.password_field :password_confirmation, class: "field_input" %>      
     </div>
 
     <%= f.submit "Принять", class: "submit" %>
