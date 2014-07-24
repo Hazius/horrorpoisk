@@ -1,6 +1,6 @@
 <div id="div_form"> 
 
-  <%= form_for(@user) do |f| %>
+  <%= form_for(@user, builder: LabellingFormBuilder) do |f| %>
   
   <!--
     <% if @user.errors.any? %>
@@ -16,8 +16,10 @@
     <% end %>
   -->
 
-    <div class="for_field_input">      
-      <div class="label_for_field_input required">Имя:</div>
+    <div class="for_field_input">
+      <div class="label_for_field_input">        
+        <%= f.label :name, "Имя:"  %>
+      </div>
       <span class="error_text">
         <%= @user.errors[:name].each {|msg| msg} if @user.errors[:name].any? %>
       </span>
@@ -25,7 +27,9 @@
     </div>
   
     <div class="for_field_input">
-      <div class="label_for_field_input required">Email:</div>
+      <div class="label_for_field_input">
+        <%= f.label :email, "Email:"  %>
+      </div>
       <span class="error_text">
         <%= @user.errors[:email].each {|msg| msg} if @user.errors[:email].any? %>
       </span>
@@ -33,7 +37,9 @@
     </div>
 
     <div class="for_field_input">
-      <div class="label_for_field_input required">Пароль:</div>
+      <div class="label_for_field_input">
+        <%= f.label :password, "Пароль:" %>
+      </div>
       <span class="error_text">
         <%= @user.errors[:password].each {|msg| msg} if @user.errors[:password].any? %>
       </span>
@@ -41,7 +47,9 @@
     </div>
 
     <div class="for_field_input">
-      <div class="label_for_field_input required">Повтор:</div>
+      <div class="label_for_field_input">
+        <%= f.label :password_confirmation, "Повтор:" %>
+      </div>
       <span class="error_text">
         <%= @user.errors[:password_confirmation].each {|msg| msg} if @user.errors[:password_confirmation].any? %>
       </span>

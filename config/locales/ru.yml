@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              name: "Заполните поле 'Имя'"
