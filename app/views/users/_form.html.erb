@@ -19,10 +19,10 @@
     <div class="for_field_input">
       <div class="label_for_field_input">        
         <%= f.label :name, "Имя:"  %>
-      </div>
+      </div>      
       <span class="error_text">
         <%= @user.errors[:name].each {|msg| msg} if @user.errors[:name].any? %>
-      </span>
+      </span>  		
       <%= f.text_field :name, class: "field_input" %>      
     </div>
   
