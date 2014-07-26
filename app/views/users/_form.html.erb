@@ -1,6 +1,7 @@
 <div id="div_form"> 
 
-  <%= form_for(@user, builder: LabellingFormBuilder) do |f| %>
+  <% # builder: LabellingFormBuilder %>
+  <%= form_for(@user) do |f| %>
   
   <!--
     <% if @user.errors.any? %>

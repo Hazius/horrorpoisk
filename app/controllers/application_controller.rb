@@ -1,32 +1,9 @@
-class LabellingFormBuilder < ActionView::Helpers::FormBuilder
-  	def label(method, text = nil, options = {}, &block)
-  		lv_required = @object.class.validators_on(method).map(&:class).include? ActiveRecord::Validations::PresenceValidator		
-  	
-      if text == nil
-        text = @object_name + "*" if lv_required
-      else
-        text += "*" if lv_required
-      end
-
-      super
-      
-  		#@template.label(@object_name, method, text, objectify_options(options), &block)  		
-  
-	end
-end
-
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
 
-	before_action :set_locale
+  protect_from_forgery with: :exception
 
-  	protect_from_forgery with: :exception
-
-  	include SessionsHelper
- 
-	def set_locale
-  		I18n.locale = params[:locale] || "ru"
-	end
+  include SessionsHelper
 
 end
